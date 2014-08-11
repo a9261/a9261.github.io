@@ -77,3 +77,127 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+/*2014.08.11 by jaja*/
+
+/*Page Layout*/
+.header{
+    min-height:300px;
+    z-index:-1;
+}
+.fixRight{
+    position:fixed;
+    width:100px;
+    height:100px;
+    border:solid;
+    border-color:black;
+    margin-top:0px;
+}
+.aside {
+    width: 23.8805970149%;
+    margin-right: 0;
+    display: inline;
+    position:absolute;
+    margin-bottom: 0;
+    float:right;
+    margin-left:20px;
+}
+.content-wrap{
+   max-width: 800px;
+
+   margin-left: auto;
+   margin-right: auto;
+}
+.post-content{
+    margin-top:-100px;
+    width:100%;
+    display:inline;
+    position:relative;
+    float:left;
+    padding-right: 15px;
+    padding-left: 15px;
+    z-index:1;
+}
+.post-content:before, .post-content:after {
+display: table;
+content: " ";
+}
+#footer{
+    clear:both;
+}
+/*home.html Post Style*/
+.section{
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 90;
+  height:200px;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.section article{
+    padding-left:10px;
+    padding-top:2px;
+}
+.postTitle{
+    color:#00A0E9;
+}
+/*ribbon*/
+.ribbon-wrapper-green {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon-green {
+  font: bold 15px Sans-Serif;
+  color: #333;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: relative;
+  padding: 7px 0;
+  left: -5px;
+  top: 15px;
+  width: 120px;
+  background-color: #BFDC7A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF5511), to(#FF7744)); 
+  background-image: -webkit-linear-gradient(top, #FF5511, #FF7744); 
+  background-image:    -moz-linear-gradient(top, #FF5511, #FF7744); 
+  background-image:     -ms-linear-gradient(top, #FF5511, #FF7744); 
+  background-image:      -o-linear-gradient(top, #FF5511, #FF7744); 
+  color: #6a6340;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green:before, .ribbon-green:after {
+  content: "";
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-green:before {
+  left: 0;
+}
+.ribbon-green:after {
+  right: 0;
+}
+.ribbon-green a{
+    color:white;
+}
+
+/*--End-- home.html Post Style*/
