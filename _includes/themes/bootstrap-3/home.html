@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <title>{{ page.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
@@ -43,36 +42,42 @@
   </head>
 
   <body>
-    <div id="wrap">
-      <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="jb-navbar-collapse">
-          <ul class="nav navbar-nav">
-            {% assign pages_list = site.pages %}
-            {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
-          </ul>
-          <!--2014.8.11 Remove Search Bar by Jaja-->
-          <!--<form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>-->
-        </div><!-- /.navbar-collapse -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#jb-navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="jb-navbar-collapse">
+              <ul class="nav navbar-nav">
+                  {% assign pages_list = site.pages %}
+                  {% assign group = 'navigation' %}
+                  {% include JB/pages_list %}
+              </ul>
+              <!--2014.8.11 Remove Search Bar by Jaja-->
+              <!--<form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
+          </div><!-- /.navbar-collapse -->
       </nav>
-
-      <div class="container">
+    <header class="header">
+          <div class="banner">
+              <div class="banner-wrap">
+                  <span></span>
+              </div>
+          </div>
+      </header>
+    <div class="content-wrap">
+      <div class="post-content">
               {% for post in site.posts limit:10 %}
               <section class="section">
                       <article>
@@ -103,6 +108,20 @@
               {% endfor %}
          
       </div>
+        <aside class="aside">
+            <!-- <gcse:search></gcse:search> -->
+            <h4>Recent Posts</h4>
+            <ul class="recent-box">
+                {% for post in site.posts limit:10 %}
+                <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <h4>Tag list</h4>
+            <ul class="tag-box inline">
+                {% assign tags_list = site.tags %}
+                {% include JB/tags_list %}
+            </ul>
+        </aside>
     </div>
 
     <div id="footer">
@@ -112,7 +131,7 @@
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>
       </div>
-    </div id="footer">
+    </div>
 
     {% include JB/analytics %}
 
