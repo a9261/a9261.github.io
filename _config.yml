@@ -3,15 +3,19 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
+highlighter: pygments
+
+#2014.08.11 by jaja
+auto: true
+#------end jaja config-----------
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Ja^2 Blogs
-tagline: Site Tagline
-author :
-  name : Ja^2
+title : GearWhere
+tagline: ·Q¨ì´NPost
+author : 
+  name : Jaja
   email : emailMe@email.com
   github : http://a9261.github.io/
   twitter : a926
