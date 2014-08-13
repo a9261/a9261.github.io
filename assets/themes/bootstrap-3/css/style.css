@@ -145,6 +145,18 @@ content: " ";
 .postTitle{
     color:#00A0E9;
 }
+.times{
+    position:absolute;
+    width:100px;
+    margin-left:40%;
+    margin-top:-110px;
+}
+.read-more{
+     position:absolute;
+    width:100px;
+    height:50px;
+    margin-left:40%;
+}
 /*ribbon*/
 .ribbon-wrapper-green {
   width: 85px;

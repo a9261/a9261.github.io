@@ -79,6 +79,7 @@
     <div class="content-wrap">
       <div class="post-content">
               {% for post in site.posts limit:10 %}
+           
               <section class="section">
                       <article>
                           <div class="page-header postTitle">
@@ -87,7 +88,11 @@
                           <div class="note post-info">
                               <div class="ribbon-wrapper-green"><div class="ribbon-green"><a href="categories.html#{{ post.category }}-ref">{{ post.category }}</a></div></div>
                           </div>
-                          <time class="post-time">{{ post.date | date_to_long_string }}</time>
+                          <div class="times">
+                              <time class="post-time">{{ post.date | date: '%Y'}}</time>
+                              <time class="post-time">{{ post.date | date: '%b' }}</time>
+                              <time class="post-time">{{ post.date | date: '%d' }}</time>
+                          </div>
                           {% if post.thumbnail %}
                           <p>
                               <img src="/images/{{ post.thumbnail }}" />
