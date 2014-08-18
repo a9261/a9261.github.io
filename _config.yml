@@ -7,6 +7,7 @@ highlighter: pygments
 
 #2014.08.11 by jaja
 auto: true
+encoding: "utf-8"
 #------end jaja config-----------
 
 # Themes are encouraged to use these universal variables 

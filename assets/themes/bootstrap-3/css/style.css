@@ -134,7 +134,7 @@ content: " ";
   box-shadow:         0px 0px 8px rgba(0,0,0,0.3);
   position: relative;
   z-index: 90;
-  height:200px;
+  height:40%;
   margin-top:30px;
   margin-bottom:30px;
 }
@@ -201,7 +201,8 @@ content: " ";
      position:absolute;
     width:100px;
     height:50px;
-    margin-left:40%;
+     margin-left:40%;
+    margin-top:10px;
 }
 /*ribbon*/
 .ribbon-wrapper-green {
@@ -257,5 +258,45 @@ content: " ";
 .ribbon-green a{
     color:white;
 }
+/*------------- Filp------------------ */
+/* entire container, keeps perspective */
+.flip-container {
+       margin-left:25%;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
 
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
 /*--End-- home.html Post Style*/
