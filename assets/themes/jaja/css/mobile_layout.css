@@ -1,0 +1,116 @@
+﻿/*這是手機版!!!*/
+body {
+    width:100%;
+    height:100%;
+    background-color:#ffd800
+}
+/*版面調整開始*/
+/*頁首*/
+header{
+    background-color:rgb(33,150,243);
+    height: 120px;
+    position: relative;
+}
+/*clearfix overflow:auto;!!*/
+.header-wrapper{
+    width:100%;
+    overflow:auto;
+}
+.logo{
+  float:left;
+  margin-left:20%;
+  margin-top: 10px;
+}
+.title{
+    float:left;
+    margin-top:36px;
+    margin-left:5%;
+}
+/*叫出選單的按鈕*/
+.nav-btn-wrapper{
+  width: 5%;
+  height: 5%;
+  position: absolute;
+  bottom: 0px;
+  left: 5%;
+}
+/*選單內容*/
+.nav-wrapper{
+  visibility: hidden;
+  top:0px;
+  left: 0px;
+  height: 100%;
+  width:220px;
+  position: absolute;
+  z-index: 2;
+}
+/*選單頁首*/
+.nav-header{
+  height: 200px;
+  width: 100%;
+}
+/*文章list/box切換按鈕*/
+.config-wrapper{
+  position: absolute;
+  height: 5%;
+  width: 10%;
+  right: 5%;
+  bottom: 0px;
+}
+/*文章區塊*/
+.article-wrapper{
+  width: 80%;
+  margin-top: 20px;
+  margin-left:10%;  
+  border: 1px solid;
+  padding:10px;
+  position: relative;
+}
+.article-header h2 {
+ display: inline;
+}
+.article-header span {
+  position: absolute;
+  top:10px;
+  right:10px;
+}
+.split-bar{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.article-content{
+  padding-left: 10px;
+  text-align: left;
+}
+.btn-readmore{
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer{
+  width: 100%;
+}
+.copyright{
+  width: 360px;
+  margin:0 auto;
+}
+/*文章區塊調整結束*/
+/*版面調整結束*/
+/*樣式調整開始*/
+.logo h1 {
+    width:84px;
+    height:100px;
+    background-image:url('../images/LOGO_mobile.png');
+    background-repeat:no-repeat;
+    text-indent:-999px;
+}
+.title h1::after{
+    font-size:48px;
+    color:rgb(255,255,255);
+    content:"REMINDER"
+}
+/*調整文章標題文字*/
+.article-wrapper .article-header h2 {
+ display: inline;
+}
+/*樣式調整結束*/

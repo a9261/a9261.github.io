@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom styles -->
+    <link href="{{ ASSET_PATH }}/css/reset.css" rel="stylesheet" type="text/css" >
+    <link href="{{ ASSET_PATH }}/css/mobile_layout.css" rel="stylesheet" type="text/css" media="screen and (max-width: 767px)">
+    <link href="{{ ASSET_PATH }}/css/desktop_layout.css" rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)">
+    <!--0 HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+  </head>
+  <body>
+    <header>
+      <div class="header-wrapper">
+        <div class="logo">
+          <h1>
+          Just A Reminder
+          </h1>
+        </div>
+        <div class="title">
+          <h1></h1>
+        </div>
+      </div>
+      <!--navbar show/hide button-->
+      <div class="nav-btn-wrapper">
+        <a href="" class="nav-btn">Button</a>
+      </div>
+      <!--layout list/box button-->
+      <div class="config-wrapper">
+        <a href="" class="layout-list">list</a>
+        <a href="" class="layout-box">box</a>
+      </div>
+    </header>
+    <!--nav bar-->
+    <div class="nav-wrapper">
+      <div class="nav-header">
+        
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Recently Post</a></li>
+          <li><a href="#">Category</a></li>
+          <li><a href="#">Tags</a></li>
+          <li><a href="#">AboutMe</a></li>
+        </ul>
+      </nav>
+      <input type="text" class="search-Bar">
+      <div class="share-icons"></div>
+    </div>
+    <!-- article content -->
+    <div class="content-wrapper">
+    <!-- Test article 01 -->
+      <div class="article-wrapper">
+        <article class="article">
+          <div class="article-header">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <span class="post-date"><time>2015-04-29</time></span>
+          </div>
+          <div class="split-bar"></div>
+          <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi velit praesentium consectetur, in perspiciatis nesciunt tempora sint quam voluptatibus, provident at ipsam recusandae, quasi expedita est aliquam. Assumenda, tempora, consequatur.</p>
+          <a href="" class="btn-readmore">read me</a>
+        </article>
+      </div>
+       <!-- Test article 02 -->
+      <div class="article-wrapper">
+        <article class="article">
+          <div class="article-header">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+             <span class="post-date"><time>2015-04-29</time></span>
+          </div>
+          <div class="split-bar"></div>
+          <div class="article-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi velit praesentium consectetur, in perspiciatis nesciunt tempora sint quam voluptatibus, provident at ipsam recusandae, quasi expedita est aliquam. Assumenda, tempora, consequatur.</div>
+          <a href="" class="btn-readmore">read me</a>
+        </article>
+      </div>
+       <!-- Test article 03 -->
+      <div class="article-wrapper">
+        <article class="article">
+          <div class="article-header">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <span class="post-date"><time>2015-04-29</time></span>
+          </div>
+          <div class="split-bar"></div>
+          <div class="article-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi velit praesentium consectetur, in perspiciatis nesciunt tempora sint quam voluptatibus, provident at ipsam recusandae, quasi expedita est aliquam. Assumenda, tempora, consequatur.</div>
+          <a href="" class="btn-readmore">read me</a>
+        </article>
+      </div>
+       <!-- Test article 04 -->
+      <div class="article-wrapper">
+        <article class="article">
+          <div class="article-header">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+             <span class="post-date"><time>2015-04-29</time></span>
+          </div>
+          <div class="split-bar"></div>
+          <div class="article-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi velit praesentium consectetur, in perspiciatis nesciunt tempora sint quam voluptatibus, provident at ipsam recusandae, quasi expedita est aliquam. Assumenda, tempora, consequatur.</div>
+          <a href="" class="btn-readmore">read me</a>
+        </article>
+      </div>
+       <!-- Test article 05 -->
+      <div class="article-wrapper">
+        <article class="article">
+          <div class="article-header">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <span class="post-date"><time>2015-04-29</time></span>
+          </div>
+          <div class="split-bar"></div>
+          <div class="article-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi velit praesentium consectetur, in perspiciatis nesciunt tempora sint quam voluptatibus, provident at ipsam recusandae, quasi expedita est aliquam. Assumenda, tempora, consequatur.</div>
+          <a href="" class="btn-readmore">read me</a>
+        </article>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="copyright">
+        Copyright 2014 | All Rights Reserved. Designed by Jaja
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+﻿/*這是桌機版!!!*/
+body {
+    background-color:#ff6a00
+}
+/*版面調整開始*/
+header{
+    background-color:rgb(33,150,243);
+}
+.header-wrapper{
+    width:1000px;
+}
+.logo h1{
+    width:210px;
+    height:250px;
+    background-image:url('../images/LOGO.png');
+    background-repeat:no-repeat;
+    text-indent:-999px;
+}
+.title h1::after{
+    content:"Just A Reminder"
+}
+/*版面調整結束*/
