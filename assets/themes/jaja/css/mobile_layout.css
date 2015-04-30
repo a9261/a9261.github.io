@@ -106,12 +106,14 @@ header{
 footer{
   position: relative;
   width: 100%;
+  height: 30px;
   z-index: 2;
   background: rgb(130,210,160);
 }
 .copyright{
   width: 360px;
   margin:0 auto;
+  padding-top: 1%;
 }
 /*文章區塊調整結束*/
 /*版面調整結束*/
@@ -127,7 +129,7 @@ footer{
 }
 /*TITLE文字設定*/
 .title h1::after{
-    font-size:48px;
+    font-size:30px;
     color:rgb(255,255,255);
     content:"REMINDER"
 }
@@ -144,6 +146,7 @@ footer{
 /*調整文章內文文字*/
 .article-content{
   font-size:22px;
+  text-align: justify
 }
 /*調整reade me文字*/
 .btn-readmore{
@@ -159,6 +162,9 @@ footer{
   height: 55px;
   background: rgb(230,74,25);
   border-radius: 100%;
+}
+.nav-btn:hover{
+  cursor:pointer;
 }
 /*選單按鈕裡的三條線*/
 .line{
@@ -185,6 +191,9 @@ footer{
   background: rgb(255,255,255);
 }
 /*文章排版選擇按鈕*/
+
+
+
 /*個別樣式*/
 /*陰影*/
 .style-shadow{
