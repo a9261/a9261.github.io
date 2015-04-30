@@ -2,16 +2,18 @@
 body {
     width:100%;
     height:100%;
-    background-color:#ffd800;
+    background-color:rgb(238,238,238);
+    color:rgb(33,33,33);
 }
 /*版面調整開始*/
 /*頁首*/
 header{
-    background-color:rgb(33,150,243);
+  background-color:rgb(25,118,210);
+    
     height: 120px;
     width: 100%;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top:0px;
 }
 /*clearfix overflow:auto;!!*/
@@ -33,7 +35,7 @@ header{
   position: absolute;
   bottom: -25px;
   left: 5%;
-  z-index: 3;
+  z-index: 4;
 }
 /*選單內容*/
 .nav-wrapper{
@@ -43,7 +45,7 @@ header{
   height: 100%;
   width:220px;
   position: absolute;
-  z-index: 4;
+  z-index: 5;
 }
 /*選單頁首*/
 .nav-header{
@@ -57,34 +59,43 @@ header{
   width: 10%;
   right: 5%;
   bottom: 0px;
-  z-index: 3;
+  z-index: 4;
 }
 .content-wrapper{
   width: 100%;
   margin-top: 160px;
   position: relative;
-  z-index: 1;
+
 }
 /*文章區塊*/
 .article-wrapper{
   width: 80%;
   height: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   margin-left:6%;  
   padding:10px;
   position: relative;
-  background: rgb(255,255,255);
+  background: rgb(224,242,241);
 }
 /*文章標題*/
 .article-title {
  display: inline;
 }
 /*文章日期*/
-.post-date {
+.yy,.mm,.dd {
   position: absolute;
-  top:15px;
-  right:5px;
+  top:-15px;
+  z-index: -1;
+}
+.yy{
+  right:44px;
+}
+.mm{
+  right:24px;
+}
+.dd{
+  right: 4px;
 }
 /*分隔線*/
 .split-bar{
@@ -97,21 +108,23 @@ header{
 }
 /*read more按鈕*/
 .btn-readmore{
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
+ display:  inline-block;
+ margin-top: 5px;
 }
 footer{
   position: relative;
   width: 100%;
   height: 30px;
   z-index: 2;
-  background: rgb(130,210,160);
+ background-color:rgb(33,150,243);
 }
 .copyright{
-  width: 360px;
+  width: 300px;
+  height: auto;
   margin:0 auto;
-  padding-top: 1%;
+  top:30%;
+  position: relative;
+  color:rgb(245,245,245);
 }
 /*文章區塊調整結束*/
 /*版面調整結束*/
@@ -129,7 +142,7 @@ footer{
 /*TITLE文字設定*/
 .title h1::after{
     font-size:48px;
-    color:rgb(255,255,255);
+    color:rgb(245,245,245);
     content:"REMINDER"
 }
 /*調整文章標題文字*/
@@ -138,7 +151,7 @@ footer{
  font-size: 18px;
 }
 /*調整文章日期文字*/
-.post-date{
+.yy,.mm,.dd{
   font-size:12px;
   font-weight: bold;
 }
@@ -149,7 +162,14 @@ footer{
 }
 /*調整reade me文字*/
 .btn-readmore{
-  font-size:20px;
+  font-size:12px;
+  font-weight: bold;
+  color: rgb(245,245,245);
+}
+/*調整CopyRight文字*/
+.copyright{
+  font-size: 12px;
+  color: rgb(245,245,245);
 }
 /*文字樣式調整結束*/
 /*文章裡的分隔線*/
@@ -176,7 +196,7 @@ footer{
   margin-left:14px;
   width: 50%;
   height: 5px;
-  background: rgb(255,255,255);
+  background: rgb(245,245,245);
 }
 .line::before{
   content:"";
@@ -184,7 +204,8 @@ footer{
   top: 15px;
   width: 50%;
   height: 5px;
-  background: rgb(255,255,255);
+  background: rgb(245,245,245);
+
 }
 .line::after{
   content:"";
@@ -192,11 +213,34 @@ footer{
   top: 35px;
   width: 50%;
   height: 5px;
-  background: rgb(255,255,255);
+  background: rgb(245,245,245);
 }
 /*文章排版選擇按鈕*/
-
-
+/*上述的功能手機用不到*/
+/*日期方塊*/
+.yy,.mm,.dd{
+  padding:2px;
+  width: auto;
+  height: auto;
+  box-shadow: 1px 1px 1px rgb(66,66,66);
+  background: rgb(255,179,0);
+}
+.yy{
+ 
+}
+.mm{
+  
+}
+.dd{
+  
+}
+/*READ*/
+.btn-readmore{
+  text-decoration: none;
+  padding: 4px 10px 4px 10px;
+  color:rgb(255,255,255);
+  background: rgb(3,155,229);
+}
 /*個別樣式*/
 /*陰影*/
 .style-shadow{
