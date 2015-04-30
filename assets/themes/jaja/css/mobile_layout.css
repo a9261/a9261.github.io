@@ -21,24 +21,23 @@ header{
 }
 .logo{
   float:left;
-  margin-left:20%;
+  margin-left:14%;
   margin-top: 10px;
 }
 .title{
     float:left;
-    margin-top:36px;
-    margin-left:5%;
+    margin-top:26px;
 }
 /*叫出選單的按鈕*/
 .nav-btn{
   position: absolute;
   bottom: -25px;
-  left: 2%;
+  left: 5%;
   z-index: 3;
 }
 /*選單內容*/
 .nav-wrapper{
-  visibility: hidden;
+  display: none;
   top:0px;
   left: 0px;
   height: 100%;
@@ -62,19 +61,20 @@ header{
 }
 .content-wrapper{
   width: 100%;
-  margin-top: 150px;
+  margin-top: 160px;
   position: relative;
   z-index: 1;
 }
 /*文章區塊*/
 .article-wrapper{
   width: 80%;
+  height: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left:10%;  
-  border: 1px solid;
+  margin-left:6%;  
   padding:10px;
   position: relative;
+  background: rgb(255,255,255);
 }
 /*文章標題*/
 .article-title {
@@ -83,8 +83,8 @@ header{
 /*文章日期*/
 .post-date {
   position: absolute;
-  top:23px;
-  right:15px;
+  top:15px;
+  right:5px;
 }
 /*分隔線*/
 .split-bar{
@@ -93,15 +93,13 @@ header{
 }
 /*內文*/
 .article-content{
-  padding-left: 20px;
   text-align: left;
 }
 /*read more按鈕*/
 .btn-readmore{
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 footer{
   position: relative;
@@ -121,6 +119,7 @@ footer{
 /*文字樣式調整開始*/
 /*LOGO設定*/
 .logo h1 {
+    display: none;
     width:84px;
     height:100px;
     background-image:url('../images/LOGO_mobile.png');
@@ -129,31 +128,36 @@ footer{
 }
 /*TITLE文字設定*/
 .title h1::after{
-    font-size:30px;
+    font-size:48px;
     color:rgb(255,255,255);
     content:"REMINDER"
 }
 /*調整文章標題文字*/
 .article-title {
  display: inline;
- font-size: 32px;
+ font-size: 18px;
 }
 /*調整文章日期文字*/
 .post-date{
-  font-size:18px;
+  font-size:12px;
   font-weight: bold;
 }
 /*調整文章內文文字*/
 .article-content{
-  font-size:22px;
-  text-align: justify
+  font-size:14px;
+  text-align: justify;
 }
 /*調整reade me文字*/
 .btn-readmore{
-  font-size:28px;
+  font-size:20px;
 }
 /*文字樣式調整結束*/
-
+/*文章裡的分隔線*/
+.split-bar{
+  width: 100%;
+  height: 1px;
+  background: rgb(33,33,33);
+}
 /*外觀調整開始*/
 /*選單按鈕*/
 .nav-btn{
@@ -184,14 +188,13 @@ footer{
 }
 .line::after{
   content:"";
- position: absolute;
+  position: absolute;
   top: 35px;
   width: 50%;
   height: 5px;
   background: rgb(255,255,255);
 }
 /*文章排版選擇按鈕*/
-
 
 
 /*個別樣式*/
