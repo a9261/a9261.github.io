@@ -74,7 +74,26 @@
       </header>
       <!-- article content -->
       <div class="content-wrapper">
-          {{ content }}
+        {% for post in site.posts limit:10 %}
+          <!-- Test article 01 -->
+          <div class="article-wrapper style-shadow">
+            <article class="article">
+              <div class="article-header">
+                <h2 class="article-title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
+              </div>
+              <div class="split-bar"></div>
+              <p class="article-content">{% if post.content contains "<!-- more -->" %}
+                          {{ post.content | split:"<!-- more -->" | first % }}
+                          {% else %}
+                          {{ post.content | strip_html | truncatewords:100 }}
+                          {% endif %}</p>
+              <a href="{{ BASE_PATH }}{{ post.url }}" class="btn-readmore">READ</a>
+            </article>
+            <div class="yy"><time>{{ post.date | date: '%Y'}}</time></div>
+            <div class="mm"><time>{{ post.date | date: '%m' }}</time></div>
+            <div class="dd"><time>{{ post.date | date: '%d' }}</time></div>
+          </div>
+        {% endfor %}
       </div>
       
       <footer>

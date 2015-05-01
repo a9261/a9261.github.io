@@ -44,8 +44,9 @@ header{
   top:0px;
   left: 0px;
   height: 100%;
-  width:40%;
+  width:44%;
   position: fixed;
+  visibility: hidden;
   z-index: 5;
 }
 /*用不到搜尋功能*/
@@ -57,10 +58,28 @@ header{
   height: 20%;
   width: 100%;
 }
-.my-mail{
-  display: block;
-  margin-bottom: 0px;
-  margin-left: 10%;
+.me{
+  position: relative;
+  z-index: 1;
+}
+.me img{
+  width:100%;
+  height:100%;
+}
+.me-shadow{
+  position: absolute;
+  width:100%;
+  height:100%;
+  opacity: 0.5;
+  background: rgb(200,200,200);
+  z-index: 2;
+}
+.me-author{
+  position: absolute;
+  z-index: 3;
+  margin-top: 25%;
+  text-align: center;
+  width: 100%;
 }
 .navgation{
   margin-top:20px;
@@ -81,11 +100,23 @@ header{
   bottom: 0px;
   z-index: 4;
 }
+/*主要內容*/
 .content-wrapper{
   width: 100%;
+  height: auto;
   margin-top: 160px;
   position: relative;
-
+}
+.content-wrapper img{
+  max-width: 100%;
+}
+.content{
+  padding: 5%;
+  text-align: left;
+}
+.content .date{
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 /*文章區塊*/
 .article-wrapper{
@@ -109,10 +140,10 @@ header{
   z-index: -1;
 }
 .yy{
-  right:44px;
+  right:48px;
 }
 .mm{
-  right:24px;
+  right:26px;
 }
 .dd{
   right: 4px;
@@ -132,7 +163,8 @@ header{
  margin-top: 5px;
 }
 footer{
-  position: relative;
+  position: fixed;
+  bottom: 0px;
   width: 100%;
   height: auto;
   z-index: 1;
@@ -157,15 +189,20 @@ footer{
     display: none;
     width:84px;
     height:100px;
-    background-image:url('../images/LOGO_mobile.png');
+    background-image:url('{{ ASSET_PATH }}/images/logo_mobile.png');
     background-repeat:no-repeat;
     text-indent:-999px;
 }
 /*TITLE文字設定*/
-.title h1::after{
+.title h1{
     font-size:48px;
     color:rgb(245,245,245);
-    content:"REMINDER"
+}
+/*JAJA*/
+.me-author{
+  color: rgb(245,245,245);
+  font-size: 30px;
+  font-weight: bold;
 }
 /*功能選單文字*/
 .nav-wrapper{
@@ -234,7 +271,6 @@ footer{
   width: 50%;
   height: 5px;
   background: rgb(245,245,245);
-
 }
 .line::after{
   content:"";
@@ -284,8 +320,8 @@ footer{
   z-index: 4;
   top: 0px;
   left: 0px;
-  height: 100%;
-  width: 100%;
+  height: 0%;
+  width: 0%;
   opacity: 0.6;
   background: rgb(100,100,100);
 }
