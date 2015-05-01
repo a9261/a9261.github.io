@@ -5,12 +5,14 @@ body {
     background-color:rgb(238,238,238);
     color:rgb(33,33,33);
 }
+a{
+   text-decoration: none;
+}
 /*版面調整開始*/
 /*頁首*/
 header{
-  background-color:rgb(25,118,210);
-    
-    height: 120px;
+    background-color:rgb(25,118,210);
+    height: 100px;
     width: 100%;
     position: fixed;
     z-index: 3;
@@ -28,7 +30,7 @@ header{
 }
 .title{
     float:left;
-    margin-top:26px;
+    margin-top:18px;
 }
 /*叫出選單的按鈕*/
 .nav-btn{
@@ -39,18 +41,36 @@ header{
 }
 /*選單內容*/
 .nav-wrapper{
-  display: none;
   top:0px;
   left: 0px;
   height: 100%;
-  width:220px;
-  position: absolute;
+  width:40%;
+  position: fixed;
   z-index: 5;
+}
+/*用不到搜尋功能*/
+.nav-wrapper input{
+  display: none;
 }
 /*選單頁首*/
 .nav-header{
-  height: 200px;
+  height: 20%;
   width: 100%;
+}
+.my-mail{
+  display: block;
+  margin-bottom: 0px;
+  margin-left: 10%;
+}
+.navgation{
+  margin-top:20px;
+  margin-left:10%;
+}
+.navgation ul li{
+  margin-bottom: 20px;
+}
+.navgation ul li a{
+  margin-left: 5%;
 }
 /*文章list/box切換按鈕*/
 .config-wrapper{
@@ -114,15 +134,17 @@ header{
 footer{
   position: relative;
   width: 100%;
-  height: 30px;
+  height: auto;
   z-index: 1;
   background-color:rgb(33,150,243);
 }
 .copyright{
-  width: 300px;
+  width: 100%;
   height: auto;
   margin:0 auto;
+  padding:10px;
   top:30%;
+  left:5%;
   position: relative;
   color:rgb(245,245,245);
 }
@@ -144,6 +166,11 @@ footer{
     font-size:48px;
     color:rgb(245,245,245);
     content:"REMINDER"
+}
+/*功能選單文字*/
+.nav-wrapper{
+  font-size: 14px;
+  font-weight: bold;
 }
 /*調整文章標題文字*/
 .article-title {
@@ -169,6 +196,7 @@ footer{
 /*調整CopyRight文字*/
 .copyright{
   font-size: 12px;
+  font-weight: bold;
   color: rgb(245,245,245);
 }
 /*文字樣式調整結束*/
@@ -179,7 +207,8 @@ footer{
   background: rgb(33,33,33);
 }
 /*外觀調整開始*/
-/*選單按鈕*/
+
+/*叫出選單的按鈕*/
 .nav-btn{
   display: block;
   width: 55px;
@@ -215,6 +244,14 @@ footer{
   height: 5px;
   background: rgb(245,245,245);
 }
+/*功能列內容*/
+/*功能列Header*/
+.nav-wrapper{
+  background: rgb(255,236,179);
+}
+.nav-header{
+  background: rgb(251,192,45);
+}
 /*文章排版選擇按鈕*/
 /*上述的功能手機用不到*/
 /*日期方塊*/
@@ -242,6 +279,16 @@ footer{
   background: rgb(3,155,229);
 }
 /*個別樣式*/
+.clip{
+  position: fixed;
+  z-index: 4;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  background: rgb(100,100,100);
+}
 /*陰影*/
 .style-shadow{
   box-shadow: 1px 1px 5px rgb(66,66,66);
