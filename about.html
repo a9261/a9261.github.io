@@ -1,17 +1,17 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.title }}</title>
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-    <meta name="author" content="{{ site.author.name }}">
+    <title>關於我</title>
+    <meta name="author" content="Jaja">
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Custom styles -->
-    <link href="{{ ASSET_PATH }}/css/reset.css" rel="stylesheet" type="text/css" >
-    <link href="{{ ASSET_PATH }}/css/mobile_layout.css" rel="stylesheet" type="text/css" media="screen and (max-width: 999px)">
-    <link href="{{ ASSET_PATH }}/css/desktop_layout.css" rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)">
+    <link href="/assets/themes/jaja/css/reset.css" rel="stylesheet" type="text/css" >
+    <link href="/assets/themes/jaja/css/mobile_layout.css" rel="stylesheet" type="text/css" media="screen and (max-width: 999px)">
+    <link href="/assets/themes/jaja/css/desktop_layout.css" rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)">
     <!--0 HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,9 +19,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <!-- atom & rss feed -->
-    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-    <link href="{{ ASSET_PATH }}/css/mini_animate.css" rel="stylesheet" />
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+    <link href="/assets/themes/jaja/css/mini_animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
@@ -31,7 +31,7 @@
         <div class="me">
           <div class="me-author">JAJA</div>
           <div class="me-shadow"></div>
-          <a href="{{ HOME_PATH }}"><img src="{{ ASSET_PATH }}/images/me.jpg" /></a>
+          <a href="/"><img src="/assets/themes/jaja/images/me.jpg" /></a>
         </div>
       </div>
       <nav class="navgation">
@@ -55,7 +55,7 @@
           </h1>
         </div>
         <div class="title">
-          <h1><a href="{{ HOME_PATH }}">REMINDER</a></h1>
+          <h1><a href="/">REMINDER</a></h1>
         </div>
       </div>
       <!--navbar show/hide button-->
@@ -74,7 +74,7 @@
     </header>
     <!-- article content -->
     <div class="content-wrapper">
-       <i class="fa fa-camera-retro fa-5x"></i>
+      <i class="fa fa-camera-retro fa-5x"></i>
     </div>
     
     <footer>
@@ -83,7 +83,7 @@
       </div>
     </footer>
     
-    <script src="{{ ASSET_PATH }}/js/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="{{ ASSET_PATH }}/js/mainScript.js"></script>
+    <script src="/assets/themes/jaja/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/themes/jaja/js/mainScript.js"></script>
   </body>
 </html>
