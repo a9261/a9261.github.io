@@ -10,14 +10,14 @@
         {{ content }}
     </div>
     {% unless page.categories == empty %}
-    <ul class="tag_box inline">
+    <ul class="categories_box">
         <li><i class="glyphicon-open"></i></li>
         {% assign categories_list = page.categories %}
         {% include JB/categories_list %}
     </ul>
     {% endunless %}
     {% unless page.tags == empty %}
-    <ul class="tag_box inline">
+    <ul class="tag_box">
         <li><i class="glyphicon-tags"></i></li>
         {% assign tags_list = page.tags %}
         {% include JB/tags_list %}
@@ -30,7 +30,7 @@
         {% else %}
         <li class="prev disabled"><a>&larr; Previous</a></li>
         {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}"><i class="fa fa-book fa-2x"></i></a></li>
         {% if page.next %}
         <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &raquo;</a></li>
         {% else %}
@@ -38,5 +38,4 @@
             <a>Next &rarr;</a>
             {% endif %}
     </ul>
-    <hr>
 </div>

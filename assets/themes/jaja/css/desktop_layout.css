@@ -1,13 +1,25 @@
 ﻿/*這是桌機版!!!*/
 body {
-    background-color:#ff6a00
+    width:100%;
+    height:100%;
+    background-color:rgb(238,238,238);
+    color:rgb(33,33,33);
+}
+a{
+   text-decoration: none;
 }
 /*版面調整開始*/
 header{
-    background-color:rgb(33,150,243);
+    background-color:rgb(25,118,210);
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    top:0px;
 }
 .header-wrapper{
     width:1000px;
+    overflow:auto;
 }
 .logo h1{
     width:210px;
@@ -16,7 +28,385 @@ header{
     background-repeat:no-repeat;
     text-indent:-999px;
 }
-.title h1::after{
-    content:"Just A Reminder"
-}
 /*版面調整結束*/
+/*這是手機版!!!*/
+/*clearfix overflow:auto;!!*/
+.logo{
+  float:left;
+  margin-left:14%;
+  margin-top: 10px;
+}
+.title{
+    float:left;
+    margin-top:18px;
+}
+/*叫出選單的按鈕*/
+.nav-btn{
+  position: absolute;
+  bottom: -25px;
+  left: 5%;
+  z-index: 4;
+}
+/*選單內容*/
+.nav-wrapper{
+  top:0px;
+  left: 0px;
+  height: 100%;
+  width:44%;
+  position: fixed;
+  visibility: hidden;
+  z-index: 5;
+  overflow-y: scroll; 
+  -webkit-overflow-scrolling: touch; 
+}
+/*用不到搜尋功能*/
+.nav-wrapper input{
+  display: none;
+}
+/*選單頁首*/
+.nav-header{
+  width: 100%;
+  position: relative;
+}
+.me{
+  position: relative;
+  z-index: 1;
+}
+.me a{
+   display: block;
+}
+.me img{
+    width: 100%;
+}
+.me-shadow{
+  position: absolute;
+  width:100%;
+  height:100%;
+  opacity: 0.5;
+  background: rgb(200,200,200);
+  z-index: 2;
+}
+.me-author{
+  position: absolute;
+  z-index: 3;
+  margin-top: 25%;
+  text-align: center;
+  width: 100%;
+}
+.navgation{
+  margin-left:10%;
+}
+.navgation ul{
+
+}
+.navgation ul li{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height:20px;
+}
+.navgation ul li a{
+  margin-left: 5%;
+}
+/*文章list/box切換按鈕*/
+.config-wrapper{
+  position: absolute;
+  height: 5%;
+  width: 10%;
+  right: 5%;
+  bottom: 0px;
+  z-index: 4;
+}
+/*主要內容*/
+.content-wrapper{
+  
+  width: 100%;
+  height: auto;
+  margin-top: 160px;
+  position: relative;
+}
+.content-wrapper img{
+  max-width: 100%;
+}
+.content{
+  padding: 5%;
+  text-align: left;
+}
+.content .date{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+/*文章區塊*/
+.article-wrapper{
+  width: 80%;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left:6%;  
+  padding:10px;
+  position: relative;
+  background: rgb(224,242,241);
+}
+/*文章標題*/
+.article-title {
+ display: inline;
+}
+/*文章日期*/
+.yy,.mm,.dd {
+  position: absolute;
+  top:-18px;
+  z-index: -1;
+}
+.yy{
+  right:48px;
+}
+.mm{
+  right:26px;
+}
+.dd{
+  right: 4px;
+}
+/*分隔線*/
+.split-bar{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/*內文*/
+.article-content{
+  text-align: left;
+}
+/*read more按鈕*/
+.btn-readmore{
+ display:  inline-block;
+ margin-top: 5px;
+}
+footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  background-color:rgb(33,150,243);
+}
+.copyright{
+  width: 100%;
+  height: auto;
+  margin:0 auto;
+  padding:10px;
+  top:30%;
+  left:5%;
+  position: relative;
+  color:rgb(245,245,245);
+}
+/*文章區塊調整結束*/
+/*版面調整結束*/
+
+/*文字樣式調整開始*/
+/*LOGO設定*/
+.logo h1 {
+    display: none;
+    width:84px;
+    height:100px;
+    background-image:url('{{ ASSET_PATH }}/images/logo_mobile.png');
+    background-repeat:no-repeat;
+    text-indent:-999px;
+}
+/*TITLE文字設定*/
+.title h1{
+    font-size:48px;
+    color:rgb(245,245,245);
+}
+.title h1 a{
+    color:rgb(245,245,245);
+}
+/*JAJA*/
+.me-author{
+  color: rgb(245,245,245);
+  font-size: 30px;
+  font-weight: bold;
+}
+/*功能選單文字*/
+.nav-wrapper{
+  font-size: 14px;
+  font-weight: bold;
+}
+/*調整文章標題文字*/
+.article-title {
+ display: inline;
+ font-size: 18px;
+}
+/*調整文章日期文字*/
+.yy,.mm,.dd{
+  font-size:12px;
+  font-weight: bold;
+}
+/*調整文章內文文字*/
+.article-content{
+  font-size:14px;
+  text-align: justify;
+}
+/*調整reade me文字*/
+.btn-readmore{
+  font-size:12px;
+  font-weight: bold;
+  color: rgb(245,245,245);
+}
+/*調整CopyRight文字*/
+.copyright{
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(245,245,245);
+}
+/*文字樣式調整結束*/
+/*文章裡的分隔線*/
+.split-bar{
+  width: 100%;
+  height: 1px;
+  background: rgb(33,33,33);
+}
+/*外觀調整開始*/
+
+/*叫出選單的按鈕*/
+.nav-btn{
+  display: block;
+  width: 55px;
+  height: 55px;
+  background: rgb(230,74,25);
+  border-radius: 100%;
+}
+.nav-btn:hover{
+  cursor:pointer;
+}
+/*選單按鈕裡的三條線*/
+.line{
+  margin-top:25px;
+  margin-left:14px;
+  width: 50%;
+  height: 5px;
+  background: rgb(245,245,245);
+}
+.line::before{
+  content:"";
+  position: absolute;
+  top: 15px;
+  width: 50%;
+  height: 5px;
+  background: rgb(245,245,245);
+}
+.line::after{
+  content:"";
+  position: absolute;
+  top: 35px;
+  width: 50%;
+  height: 5px;
+  background: rgb(245,245,245);
+}
+/*功能列內容*/
+/*功能列Header*/
+.nav-wrapper{
+  background: rgb(255,236,179);
+}
+.nav-header{
+  background: rgb(251,192,45);
+}
+/*文章排版選擇按鈕*/
+/*上述的功能手機用不到*/
+/*日期方塊*/
+.yy,.mm,.dd{
+  padding:2px;
+  width: auto;
+  height: auto;
+  box-shadow: 1px 1px 1px rgb(66,66,66);
+  background: rgb(255,179,0);
+}
+.yy{
+ 
+}
+.mm{
+  
+}
+.dd{
+  
+}
+/*READ*/
+.btn-readmore{
+  text-decoration: none;
+  padding: 4px 10px 4px 10px;
+  color:rgb(255,255,255);
+  background: rgb(3,155,229);
+}
+/*選單出現時，主畫面的陰影*/
+.clip{
+  position: fixed;
+  z-index: 4;
+  top: 0px;
+  left: 0px;
+  height: 0%;
+  width: 0%;
+  opacity: 0.6;
+  background: rgb(100,100,100);
+}
+/*文章內容樣式*/
+.text-content{
+  margin-bottom: 10px;
+}
+/*文章的categories與tags*/
+.categories_box{
+  float:left;
+}
+.tag_box{
+  float: left;
+  margin-left: 10px;
+}
+/*上下篇的導覽列*/
+.pagination{
+  display: block;
+  height:50px;
+  width:200px;
+  margin:0 auto;
+  margin-bottom: 10px;
+  clear:both;
+}
+.pagination li{
+  display: inline;
+  margin-left: 5px;
+}
+/*文章列表樣式*/
+/*文章列表標題*/
+.page-header{
+  text-align: center;
+}
+.page-header h1{
+  font-size:30px;
+  font-weight: bold; 
+}
+/*文章列表清單內容*/
+.article-list-row{
+  margin-top: 10px;
+}
+.article-list-row h3{
+  padding-left:6px;
+}
+.article-list-row ul{
+  padding-left:18px;
+}
+/*陰影*/
+.style-shadow{
+  box-shadow: 1px 1px 5px rgb(66,66,66);
+}
+/*選單動畫延遲設定*/
+.archive{
+ 
+}
+.categories{
+    animation-delay: 0.1s;
+  -webkit-animation-delay:0.1s;
+}
+.tags{
+    animation-delay: 0.2s;
+  -webkit-animation-delay:0.2s;
+}
+.about{
+    animation-delay: 0.3s;
+  -webkit-animation-delay:0.3s;
+}
+/*外觀調整結束

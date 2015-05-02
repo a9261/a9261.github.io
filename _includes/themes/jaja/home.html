@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -34,14 +34,14 @@
              <a href="{{ HOME_PATH }}"><img src="{{ ASSET_PATH }}/images/me.png" /></a>
          </div>
       </div>
-      <nav class="navgation">
-        <ul>
-          <li><i class="fa fa-clock-o fa-lg"></i><a href="/archive.html">RecenPost</a></li>
-          <li><i class="fa fa-th-large fa-lg"></i><a href="/categories.html">Category</a></li>
-          <li><i class="fa fa-tags fa-lg"></i><a href="/tags.html">Tags</a></li>
-          <li><i class="fa fa-coffee fa-lg"></i><a href="/about.html">AboutMe</a></li>
-        </ul>
-      </nav>
+        <nav class="navgation">
+          <ul>
+            <li class="archive"><i class="fa fa-clock-o fa-lg"></i><a href="/archive.html">RecenPost</a></li>
+            <li class="categories"><i class="fa fa-th-large fa-lg"></i><a href="/categories.html">Category</a></li>
+            <li class="tags"><i class="fa fa-tags fa-lg"></i><a href="/tags.html">Tags</a></li>
+            <li class="about"><i class="fa fa-coffee fa-lg"></i><a href="/about.html">AboutMe</a></li>
+          </ul>
+        </nav>
       <input type="text" class="search-Bar">
       <div class="share-icons"></div>
     </div>
@@ -55,7 +55,7 @@
             </h1>
           </div>
           <div class="title">
-            <h1>REMINDER</h1>
+            <h1><a href="{{ HOME_PATH }}">REMINDER</a></h1>
           </div>
         </div>
         <!--navbar show/hide button-->

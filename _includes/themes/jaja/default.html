@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -21,25 +21,25 @@
     <!-- atom & rss feed -->
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
-      <link href="{{ ASSET_PATH }}/css/mini_animate.css" rel="stylesheet" />
+    <link href="{{ ASSET_PATH }}/css/mini_animate.css" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
     <!--navbar-->
     <div class="nav-wrapper style-shadow">
       <div class="nav-header">
-         <div class="me">
-             <div class="me-author">JAJA</div>
-             <div class="me-shadow"></div>
-             <a href="{{ HOME_PATH }}"><img src="{{ ASSET_PATH }}/images/me.png" /></a>
-         </div>
+        <div class="me">
+          <div class="me-author">JAJA</div>
+          <div class="me-shadow"></div>
+          <a href="{{ HOME_PATH }}"><img src="{{ ASSET_PATH }}/images/me.png" /></a>
+        </div>
       </div>
       <nav class="navgation">
         <ul>
-          <li><i class="fa fa-clock-o fa-lg"></i><a href="/archive.html">RecenPost</a></li>
-          <li><i class="fa fa-th-large fa-lg"></i><a href="/categories.html">Category</a></li>
-          <li><i class="fa fa-tags fa-lg"></i><a href="/tags.html">Tags</a></li>
-          <li><i class="fa fa-coffee fa-lg"></i><a href="/about.html">AboutMe</a></li>
+          <li class="archive"><i class="fa fa-clock-o fa-lg"></i><a href="/archive.html">RecenPost</a></li>
+          <li class="categories"><i class="fa fa-th-large fa-lg"></i><a href="/categories.html">Category</a></li>
+          <li class="tags"><i class="fa fa-tags fa-lg"></i><a href="/tags.html">Tags</a></li>
+          <li class="about"><i class="fa fa-coffee fa-lg"></i><a href="/about.html">AboutMe</a></li>
         </ul>
       </nav>
       <input type="text" class="search-Bar">
@@ -47,66 +47,43 @@
     </div>
     <div class="clip">
     </div>
-      <header class="style-shadow">
-        <div class="header-wrapper">
-          <div class="logo">
-            <h1>
-            Just A Reminder
-            </h1>
-          </div>
-          <div class="title">
-            <h1>REMINDER</h1>
-          </div>
+    <header class="style-shadow">
+      <div class="header-wrapper">
+        <div class="logo">
+          <h1>
+          Just A Reminder
+          </h1>
         </div>
-        <!--navbar show/hide button-->
-        <div class="nav-btn style-shadow">
-          <div class="line"></div>
+        <div class="title">
+          <h1><a href="{{ HOME_PATH }}">REMINDER</a></h1>
         </div>
-        <!--layout list/box button-->
-        <div class="config-wrapper">
-          <div class="layout-list">
-            <div class="list-point"></div>
-          </div>
-          <div class="layout-box">
-            <div class="list-box"></div>
-          </div>
-        </div>
-      </header>
-      <!-- article content -->
-      <div class="content-wrapper">
-          {{ content }}
       </div>
-      
-      <footer>
-        <div class="copyright">
-          Copyright 2014 | All Rights Reserved. Designed by Jaja
+      <!--navbar show/hide button-->
+      <div class="nav-btn style-shadow">
+        <div class="line"></div>
+      </div>
+      <!--layout list/box button-->
+      <div class="config-wrapper">
+        <div class="layout-list">
+          <div class="list-point"></div>
         </div>
-      </footer>
+        <div class="layout-box">
+          <div class="list-box"></div>
+        </div>
+      </div>
+    </header>
+    <!-- article content -->
+    <div class="content-wrapper">
+      {{ content }}
+    </div>
     
-      <script src="{{ ASSET_PATH }}/js/bower_components/jquery/dist/jquery.min.js"></script>
-      <script src="{{ ASSET_PATH }}/js/mainScript.js"></script>
-    <script>
-    $(function () {
-        $('.nav-btn').click(function () {
-            //$('.nav-wrapper').removeClass('animated slideOutLeft');
-            $('.nav-wrapper').addClass('animated slideInLeft');
-            $('.clip').css('width', '100%');
-            $('.clip').css('height', '100%');
-        });
-        $('.clip').click(function () {
-
-            $('.nav-wrapper').addClass('slideOutLeft');
-            $('.nav-wrapper').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                $('.nav-wrapper').removeClass('animated slideInLeft slideOutLeft');
-            });
-      
-            $('.clip').css('width', '0%');
-            $('.clip').css('height', '0%');
-        });
-    //$('.nav-wrapper').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-    //    $('.nav-wrapper').removeClass('animated slideInLeft');
-    //});
-    });
-    </script>
+    <footer>
+      <div class="copyright">
+        Copyright 2014 | All Rights Reserved. Designed by Jaja
+      </div>
+    </footer>
+    
+    <script src="{{ ASSET_PATH }}/js/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ ASSET_PATH }}/js/mainScript.js"></script>
   </body>
 </html>
