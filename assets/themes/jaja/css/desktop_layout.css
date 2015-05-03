@@ -182,7 +182,9 @@ header{
   bottom: 20px;
 
 }
-
+.btn-readmore:visited{
+    color:rgb(245,245,245);
+}
 footer{
   position: fixed;
   bottom: 0px;

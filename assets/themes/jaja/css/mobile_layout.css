@@ -177,6 +177,9 @@ header{
  bottom: 10px;
  position: absolute
 }
+.btn-readmore:visited{
+    color:rgb(245,245,245);
+}
 footer{
   position: fixed;
   bottom: 0px;
