@@ -5,6 +5,9 @@ body {
     background-color:rgb(238,238,238);
     color:rgb(33,33,33);
 }
+div{
+  box-sizing: border-box;
+}
 a{
    text-decoration: none;
 }
@@ -20,31 +23,25 @@ header{
 .header-wrapper{
     width:1000px;
     overflow:auto;
-}
-.logo h1{
-    width:210px;
-    height:250px;
-    background-image:url('../images/LOGO.png');
-    background-repeat:no-repeat;
-    text-indent:-999px;
+    margin:0 auto;
 }
 /*版面調整結束*/
-/*這是手機版!!!*/
 /*clearfix overflow:auto;!!*/
 .logo{
   float:left;
-  margin-left:14%;
+  margin-left:35%;
   margin-top: 10px;
 }
 .title{
     float:left;
-    margin-top:18px;
+    margin-top:28px;
+    margin-left:30px;
 }
 /*叫出選單的按鈕*/
 .nav-btn{
   position: absolute;
   bottom: -25px;
-  left: 5%;
+  left: 25%;
   z-index: 4;
 }
 /*選單內容*/
@@ -52,12 +49,10 @@ header{
   top:0px;
   left: 0px;
   height: 100%;
-  width:44%;
+  width:300px;
   position: fixed;
   visibility: hidden;
   z-index: 5;
-  overflow-y: scroll; 
-  -webkit-overflow-scrolling: touch; 
 }
 /*用不到搜尋功能*/
 .nav-wrapper input{
@@ -89,23 +84,23 @@ header{
 .me-author{
   position: absolute;
   z-index: 3;
-  margin-top: 25%;
+  top: 80px;
   text-align: center;
   width: 100%;
 }
 .navgation{
-  margin-left:10%;
+  margin-left:20px;
 }
 .navgation ul{
 
 }
 .navgation ul li{
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   height:20px;
 }
-.navgation ul li a{
-  margin-left: 5%;
+.navgation ul li a i{
+  margin-right: 16px;
 }
 /*文章list/box切換按鈕*/
 .config-wrapper{
@@ -118,7 +113,6 @@ header{
 }
 /*主要內容*/
 .content-wrapper{
-  
   width: 100%;
   height: auto;
   margin-top: 160px;
@@ -137,12 +131,11 @@ header{
 }
 /*文章區塊*/
 .article-wrapper{
-  width: 80%;
-  height: auto;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  margin-left:6%;  
-  padding:10px;
+  width: 1000px;
+  height: 400px;
+  margin-bottom: 80px;
+  margin-left:25%;  
+  padding:30px;
   position: relative;
   background: rgb(224,242,241);
 }
@@ -150,20 +143,24 @@ header{
 .article-title {
  display: inline;
 }
+/*內文摘要*/
+.article-short-content{
+  margin-top: 20px;
+}
 /*文章日期*/
 .yy,.mm,.dd {
   position: absolute;
-  top:-18px;
+  top:-24px;
   z-index: -1;
 }
 .yy{
-  right:48px;
+  right:88px;
 }
 .mm{
-  right:26px;
+  right:48px;
 }
 .dd{
-  right: 4px;
+  right: 10px;
 }
 /*分隔線*/
 .split-bar{
@@ -176,9 +173,13 @@ header{
 }
 /*read more按鈕*/
 .btn-readmore{
- display:  inline-block;
- margin-top: 5px;
+
+  display:  inline-block;
+  position: absolute;
+  bottom: 20px;
+
 }
+
 footer{
   position: fixed;
   bottom: 0px;
@@ -190,10 +191,9 @@ footer{
 .copyright{
   width: 100%;
   height: auto;
-  margin:0 auto;
   padding:10px;
   top:30%;
-  left:5%;
+  text-align: center;
   position: relative;
   color:rgb(245,245,245);
 }
@@ -203,10 +203,10 @@ footer{
 /*文字樣式調整開始*/
 /*LOGO設定*/
 .logo h1 {
-    display: none;
-    width:84px;
-    height:100px;
-    background-image:url('{{ ASSET_PATH }}/images/logo_mobile.png');
+    width:70px;
+    height:85px;
+    background-image:url('../images/logo.png');
+    background-size:   cover;
     background-repeat:no-repeat;
     text-indent:-999px;
 }
@@ -221,38 +221,38 @@ footer{
 /*JAJA*/
 .me-author{
   color: rgb(245,245,245);
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
 }
 /*功能選單文字*/
 .nav-wrapper{
-  font-size: 14px;
+  font-size: 26px;
   font-weight: bold;
 }
 /*調整文章標題文字*/
 .article-title {
  display: inline;
- font-size: 18px;
+ font-size: 28px;
 }
 /*調整文章日期文字*/
 .yy,.mm,.dd{
-  font-size:12px;
+  font-size:20px;
   font-weight: bold;
 }
 /*調整文章內文文字*/
-.article-content{
-  font-size:14px;
+.article-short-content p{
+  font-size:20px;
   text-align: justify;
 }
 /*調整reade me文字*/
 .btn-readmore{
-  font-size:12px;
+  font-size:20px;
   font-weight: bold;
   color: rgb(245,245,245);
 }
 /*調整CopyRight文字*/
 .copyright{
-  font-size: 12px;
+  font-size: 20px;
   font-weight: bold;
   color: rgb(245,245,245);
 }
@@ -361,14 +361,15 @@ footer{
 .pagination{
   display: block;
   height:50px;
-  width:200px;
+  width:380px;
   margin:0 auto;
-  margin-bottom: 10px;
+  padding-bottom: 120px;
   clear:both;
 }
-.pagination li{
+.pagination span{
   display: inline;
-  margin-left: 5px;
+  margin-left:30px;
+  margin-right: 30px;
 }
 /*文章列表樣式*/
 /*文章列表標題*/

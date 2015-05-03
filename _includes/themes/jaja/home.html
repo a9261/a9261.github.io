@@ -36,10 +36,10 @@
       </div>
         <nav class="navgation">
           <ul>
-            <li class="archive"><i class="fa fa-clock-o fa-lg"></i><a href="/archive.html">RecenPost</a></li>
-            <li class="categories"><i class="fa fa-th-large fa-lg"></i><a href="/categories.html">Category</a></li>
-            <li class="tags"><i class="fa fa-tags fa-lg"></i><a href="/tags.html">Tags</a></li>
-            <li class="about"><i class="fa fa-coffee fa-lg"></i><a href="/about.html">AboutMe</a></li>
+            <li class="archive"><a href="/archive.html"><i class="fa fa-clock-o fa-lg"></i>RecenPost</a></li>
+            <li class="categories"><a href="/categories.html"><i class="fa fa-th-large fa-lg"></i>Category</a></li>
+            <li class="tags"><a href="/tags.html"><i class="fa fa-tags fa-lg"></i>Tags</a></li>
+            <li class="about"><a href="/about.html"><i class="fa fa-coffee fa-lg"></i>AboutMe</a></li>
           </ul>
         </nav>
       <input type="text" class="search-Bar">
@@ -57,11 +57,12 @@
           <div class="title">
             <h1><a href="{{ HOME_PATH }}">REMINDER</a></h1>
           </div>
+         
         </div>
-        <!--navbar show/hide button-->
-        <div class="nav-btn style-shadow">
-          <div class="line"></div>
-        </div>
+          <!--navbar show/hide button-->
+          <div class="nav-btn style-shadow">
+            <div class="line"></div>
+          </div>
         <!--layout list/box button-->
         <div class="config-wrapper">
           <div class="layout-list">
@@ -74,7 +75,7 @@
       </header>
       <!-- article content -->
       <div class="content-wrapper">
-        {% for post in site.posts limit:10 %}
+        {% for post in paginator.posts %}
           <!-- Test article 01 -->
           <div class="article-wrapper style-shadow">
             <article class="article">
@@ -82,11 +83,18 @@
                 <h2 class="article-title"><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
               </div>
               <div class="split-bar"></div>
-              <p class="article-content">{% if post.content contains "<!-- more -->" %}
+              <div class="article-short-content">
+              {% if post.thumbnail %}
+                      <p>
+                          <img src="{{ post.thumbnail }}" />
+                      </p>
+              {% endif %}
+              {% if post.content contains "<!-- more -->" %}
                           {{ post.content | split:"<!-- more -->" | first % }}
                           {% else %}
                           {{ post.content | strip_html | truncatewords:100 }}
-                          {% endif %}</p>
+                          {% endif %}
+              </div>
               <a href="{{ BASE_PATH }}{{ post.url }}" class="btn-readmore">READ</a>
             </article>
             <div class="yy"><time>{{ post.date | date: '%Y'}}</time></div>
@@ -96,6 +104,21 @@
         {% endfor %}
       </div>
       
+<!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous"><i class="fa fa-arrow-left fa-lg"></i>Previous</a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next"><i class="fa fa-arrow-right fa-lg"></i>Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>
+<!-- End paginator -->
       <footer>
         <div class="copyright">
           Copyright 2014 | All Rights Reserved. Designed by Jaja
@@ -104,28 +127,5 @@
     
       <script src="{{ ASSET_PATH }}/js/bower_components/jquery/dist/jquery.min.js"></script>
       <script src="{{ ASSET_PATH }}/js/mainScript.js"></script>
-    <script>
-    $(function () {
-        $('.nav-btn').click(function () {
-            //$('.nav-wrapper').removeClass('animated slideOutLeft');
-            $('.nav-wrapper').addClass('animated slideInLeft');
-            $('.clip').css('width', '100%');
-            $('.clip').css('height', '100%');
-        });
-        $('.clip').click(function () {
-
-            $('.nav-wrapper').addClass('slideOutLeft');
-            $('.nav-wrapper').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-                $('.nav-wrapper').removeClass('animated slideInLeft slideOutLeft');
-            });
-      
-            $('.clip').css('width', '0%');
-            $('.clip').css('height', '0%');
-        });
-    //$('.nav-wrapper').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-    //    $('.nav-wrapper').removeClass('animated slideInLeft');
-    //});
-    });
-    </script>
   </body>
 </html>

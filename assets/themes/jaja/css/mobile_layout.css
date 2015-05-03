@@ -4,7 +4,7 @@ body {
     height:100%;
     background-color:rgb(238,238,238);
     color:rgb(33,33,33);
-
+    box-sizing:border-box;
 }
 a{
    text-decoration: none;
@@ -97,8 +97,8 @@ header{
   margin-bottom: 20px;
   height:20px;
 }
-.navgation ul li a{
-  margin-left: 5%;
+.navgation ul li a i{
+  margin-right: 5%;
 }
 /*文章list/box切換按鈕*/
 .config-wrapper{
@@ -131,7 +131,7 @@ header{
 /*文章區塊*/
 .article-wrapper{
   width: 80%;
-  height: auto;
+  height: 200px;
   margin-top: 30px;
   margin-bottom: 20px;
   margin-left:6%;  
@@ -166,11 +166,13 @@ header{
 /*內文*/
 .article-content{
   text-align: left;
+  margin-top: 10px;
 }
 /*read more按鈕*/
 .btn-readmore{
  display:  inline-block;
- margin-top: 5px;
+ bottom: 10px;
+ position: absolute
 }
 footer{
   position: fixed;
@@ -183,10 +185,9 @@ footer{
 .copyright{
   width: 100%;
   height: auto;
-  margin:0 auto;
   padding:10px;
   top:30%;
-  left:5%;
+  text-align: center;
   position: relative;
   color:rgb(245,245,245);
 }
@@ -233,7 +234,7 @@ footer{
   font-weight: bold;
 }
 /*調整文章內文文字*/
-.article-content{
+.article-short-content p{
   font-size:14px;
   text-align: justify;
 }
