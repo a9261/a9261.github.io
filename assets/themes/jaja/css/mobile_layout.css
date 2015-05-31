@@ -15,8 +15,8 @@ a:visited{
 .social-share a:link{
    color: rgb(33,33,33);
 }
-img{
-  width:95%;
+p{
+  line-height: 28px;
 }
 /*版面調整開始*/
 /*頁首*/
@@ -133,6 +133,9 @@ header{
   padding: 5%;
   text-align: left;
 }
+.content p img{
+  width:100%;
+}
 .content .date{
   margin-top: 1%;
   margin-bottom: 1%;
@@ -188,7 +191,6 @@ header{
 }
 .btn-readmore:link{
   color:rgb(245,245,245);
-}
 }
 .btn-readmore:visited{
     color:rgb(245,245,245);
@@ -434,4 +436,4 @@ footer{
     animation-delay: 0.3s;
   -webkit-animation-delay:0.3s;
 }
-/*外觀調整結束
+/*外觀調整結束*/

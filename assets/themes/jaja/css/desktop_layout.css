@@ -17,6 +17,9 @@ a:visited{
 .social-share a{
    color: rgb(33,33,33);
 }
+p{
+  line-height: 30px;
+}
 /*版面調整開始*/
 header{
     background-color:rgb(25,118,210);
@@ -136,6 +139,9 @@ header{
   width:1000px;
   top:100px;
 }
+.content p img{
+  width:100%;
+}
 .content .date{
   margin-top: 1%;
   margin-bottom: 1%;
@@ -192,9 +198,8 @@ header{
   bottom: 20px;
   
 }
-.btn-readmore::link{
+.btn-readmore:link{
   color:rgb(245,245,245);
-}
 }
 .btn-readmore:visited{
     color:rgb(245,245,245);
@@ -452,4 +457,4 @@ footer{
     animation-delay: 0.3s;
   -webkit-animation-delay:0.3s;
 }
-/*外觀調整結束
+/*外觀調整結束*/
