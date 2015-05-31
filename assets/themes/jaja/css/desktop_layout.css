@@ -233,7 +233,7 @@ footer{
 .logo h1 {
     width:50px;
     height:60px;
-    background-image:url('../images/logo.png');
+    background-image:url('/images/logo.png');
     background-size:   cover;
     background-repeat:no-repeat;
     text-indent:-999px;
