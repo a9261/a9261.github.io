@@ -142,9 +142,14 @@ header{
 .content p img{
   width:100%;
 }
+.content h1{
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  font-size: large;
+}
 .content .date{
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-bottom: 30px;
 }
 /*文章區塊*/
 .article-wrapper{

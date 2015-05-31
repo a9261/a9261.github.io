@@ -106,8 +106,8 @@ header{
   margin-bottom: 20px;
   height:20px;
 }
-.navgation ul li a i{
-  margin-right: 5%;
+.navgation ul li a{
+  margin-left: 16px;
 }
 /*文章list/box切換按鈕*/
 .config-wrapper{
@@ -130,6 +130,7 @@ header{
   max-width: 100%;
 }
 .content{
+  margin-top: 150px;
   padding: 5%;
   text-align: left;
 }
@@ -143,7 +144,6 @@ header{
 /*文章區塊*/
 .article-wrapper{
   width: 80%;
-  height: 200px;
   margin-top: 30px;
   margin-bottom: 20px;
   margin-left:6%;  
@@ -187,7 +187,6 @@ header{
 .btn-readmore{
  display:  inline-block;
  bottom: 10px;
- position: absolute;
 }
 .btn-readmore:link{
   color:rgb(245,245,245);
@@ -214,7 +213,8 @@ footer{
 }
 /*分享面版*/
 .social-share{
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 /*文章區塊調整結束*/
 /*版面調整結束*/
@@ -381,7 +381,6 @@ footer{
   height:50px;
   width:200px;
   margin:0 auto;
-  margin-bottom: 10px;
   clear:both;
 }
 .pagination li{
