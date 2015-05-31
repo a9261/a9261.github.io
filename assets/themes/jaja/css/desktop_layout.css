@@ -140,7 +140,7 @@ header{
   top:100px;
 }
 .content p img{
-  width:100%;
+  max-width:100%;
 }
 .content h1{
   margin-bottom: 30px;

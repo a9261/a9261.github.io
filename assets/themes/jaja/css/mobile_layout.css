@@ -135,7 +135,7 @@ header{
   text-align: left;
 }
 .content p img{
-  width:100%;
+  max-width:100%;
 }
 .content .date{
   margin-top: 1%;
