@@ -402,7 +402,6 @@ footer{
 }
 .pagination li{
   display: inline-block;
-  margin-left: 5px;
   margin-left:calc((100%/6));
 }
 .pagination span{
