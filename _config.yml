@@ -8,8 +8,8 @@ highlighter: pygments
 #2014.08.11 by jaja
 auto: true
 encoding: "utf-8"
-paginate: 5
-paginate_path: "/page:num"
+paginate: 5 #指定每一頁要顯示的數量
+paginate_path: "_site/blog/page:num"  #指定分頁連結的形式
 #------end jaja config-----------
 
 # Themes are encouraged to use these universal variables 
@@ -89,7 +89,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : Reminder
     livefyre :
       site_id : 123
     intensedebate :
@@ -106,7 +106,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-46569314-3'
     getclicky :
       site_id : 
     mixpanel :

@@ -12,6 +12,12 @@ a{
 a:visited{
   color: rgb(33,33,33);
 }
+.social-share a{
+   color: rgb(33,33,33);
+}
+img{
+  width:95%;
+}
 /*版面調整開始*/
 /*頁首*/
 header{
@@ -175,7 +181,9 @@ header{
 .btn-readmore{
  display:  inline-block;
  bottom: 10px;
- position: absolute
+ position: absolute;
+ color:rgb(245,245,245);
+}
 }
 .btn-readmore:visited{
     color:rgb(245,245,245);
@@ -196,6 +204,10 @@ footer{
   text-align: center;
   position: relative;
   color:rgb(245,245,245);
+}
+/*分享面版*/
+.social-share{
+  margin-top: 50px;
 }
 /*文章區塊調整結束*/
 /*版面調整結束*/
@@ -391,6 +403,15 @@ footer{
 /*陰影*/
 .style-shadow{
   box-shadow: 1px 1px 5px rgb(66,66,66);
+}
+.shadow-z-1{
+  box-shadow:0 2px 10px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.26);
+}
+.shadow-z-2{
+  box-shadow: 0 6px 20px 0 rgba(0,0,0,.19), 0 8px 17px 0 rgba(0,0,0,.20);
+}
+.shadow-z-3{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 /*選單動畫延遲設定*/
 .archive{

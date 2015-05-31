@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Facebook meta -->
+<meta property="og:title"
+content="{{ page.title }}" />
+<meta property="og:site_name" content="Reminder Everthing"/>
+<meta property="og:url"
+content="http://a9261.github.io" />
+<meta property="og:image" content="http://a9261.github.io/assets/themes/jaja/images/me.jpg"/>
+<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:type" content="article" />
+<meta property="article:author" content="Jaja" />
+<meta property="article:publisher" content="Jaja" />
+  <!-- End Facebook meta -->
+  <!-- Link ICON -->
+  <link rel="shortcut icon" href="favicon.ico">
+      <link rel="apple-touch-icon" href="http://a9261.github.io/assets/themes/jaja/images/icons/blog_app_icon_57.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="http://a9261.github.io/assets/themes/jaja/images/icons/blog_app_icon_72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="http://a9261.github.io/assets/themes/jaja/images/icons/blog_app_icon_114.png">
+ <!-- END -->
+ 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ page.title }}</title>
@@ -12,7 +31,7 @@
     <link href="{{ ASSET_PATH }}/css/reset.css" rel="stylesheet" type="text/css" >
     <link href="{{ ASSET_PATH }}/css/mobile_layout.css" rel="stylesheet" type="text/css" media="screen and (max-width: 999px)">
     <link href="{{ ASSET_PATH }}/css/desktop_layout.css" rel="stylesheet" type="text/css" media="screen and (min-width: 1000px)">
-    <!--0 HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--111 HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -26,7 +45,7 @@
   </head>
   <body>
     <!--navbar-->
-    <div class="nav-wrapper style-shadow">
+    <div class="nav-wrapper shadow-z-2 ">
       <div class="nav-header">
         <div class="me">
           <div class="me-author">JAJA</div>
@@ -47,7 +66,7 @@
     </div>
     <div class="clip">
     </div>
-    <header class="style-shadow">
+    <header class="shadow-z-1">
       <div class="header-wrapper">
         <div class="logo">
           <h1>
@@ -59,7 +78,7 @@
         </div>
       </div>
       <!--navbar show/hide button-->
-      <div class="nav-btn style-shadow">
+      <div class="nav-btn shadow-z-2 ">
           <div class="line"></div>
       </div>
       <!--layout list/box button-->
@@ -73,16 +92,17 @@
       </div>
     </header>
     <!-- article content -->
-    <div class="content-wrapper">
+<!--2015.05.31 不要用content-wrapper包起來     <div class="content-wrapper">
+    </div> -->
       {{ content }}
-    </div>
+    
     
     <footer>
       <div class="copyright">
-        Copyright 2014 | All Rights Reserved. Designed by Jaja
+        Copyright 2015 | All Rights Reserved. Designed by Jaja
       </div>
     </footer>
-    
+    {% include JB/analytics %}
     <script src="{{ ASSET_PATH }}/js/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="{{ ASSET_PATH }}/js/mainScript.js"></script>
   </body>

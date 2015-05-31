@@ -14,6 +14,9 @@ a{
 a:visited{
   color: rgb(33,33,33);
 }
+.social-share a{
+   color: rgb(33,33,33);
+}
 /*版面調整開始*/
 header{
     background-color:rgb(25,118,210);
@@ -102,8 +105,8 @@ header{
   margin-bottom: 40px;
   height:20px;
 }
-.navgation ul li a i{
-  margin-right: 16px;
+.navgation ul li a{
+  margin-left: 16px;
 }
 /*文章list/box切換按鈕*/
 .config-wrapper{
@@ -120,13 +123,18 @@ header{
   height: auto;
   margin-top: 160px;
   position: relative;
+  margin-bottom: 50px;
 }
 .content-wrapper img{
   max-width: 100%;
 }
 .content{
+  position: relative;
   padding: 5%;
   text-align: left;
+  margin:0 auto;
+  width:1000px;
+  top:100px;
 }
 .content .date{
   margin-top: 1%;
@@ -136,8 +144,8 @@ header{
 .article-wrapper{
   width: 1000px;
   height: 320px;
-  margin-bottom: 80px;
   margin-left:25%;  
+  margin-top:50px;
   padding:30px;
   position: relative;
   background: rgb(224,242,241);
@@ -180,7 +188,8 @@ header{
   display:  inline-block;
   position: absolute;
   bottom: 20px;
-
+  color:rgb(245,245,245);
+}
 }
 .btn-readmore:visited{
     color:rgb(245,245,245);
@@ -202,18 +211,23 @@ footer{
   position: relative;
   color:rgb(245,245,245);
 }
+/*分享面版*/
+.social-share{
+  margin-top: 50px;
+}
 /*文章區塊調整結束*/
 /*版面調整結束*/
 
 /*文字樣式調整開始*/
 /*LOGO設定*/
 .logo h1 {
-    width:70px;
-    height:85px;
+    width:50px;
+    height:60px;
     background-image:url('../images/logo.png');
     background-size:   cover;
     background-repeat:no-repeat;
     text-indent:-999px;
+    margin-top:10px;
 }
 /*TITLE文字設定*/
 .title h1{
@@ -361,13 +375,24 @@ footer{
   margin-left: 10px;
 }
 /*上下篇的導覽列*/
+.paginat-wrapper{
+  position: relative;
+  height:100px;
+  width:1000px;
+  margin:0 auto;
+}
 .pagination{
+  position: relative;
   display: block;
   height:50px;
   width:380px;
-  margin:0 auto;
-  padding-bottom: 120px;
+  margin: 0 auto;
+  bottom: 0px;
   clear:both;
+}
+.pagination li{
+  display: inline;
+  margin-left: 5px;
 }
 .pagination span{
   display: inline;
@@ -396,6 +421,15 @@ footer{
 /*陰影*/
 .style-shadow{
   box-shadow: 2px 3px 6px rgb(66,66,66);
+}
+.shadow-z-1{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.shadow-z-2{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.shadow-z-3{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 /*選單動畫延遲設定*/
 .archive{

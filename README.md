@@ -1,3 +1,5 @@
+#你好！這是我第一個github.io Blog , 是利用Jekyll-Bootstrap進行修改的 :)
+
 # Jekyll-Bootstrap
 
 The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
