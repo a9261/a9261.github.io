@@ -12,7 +12,7 @@ a{
 a:visited{
   color: rgb(33,33,33);
 }
-.social-share a{
+.social-share a:link{
    color: rgb(33,33,33);
 }
 img{
@@ -152,6 +152,9 @@ header{
 .article-title {
  display: inline;
 }
+.article-title a:link{
+  color: rgb(33,33,33);
+}
 /*文章日期*/
 .yy,.mm,.dd {
   position: absolute;
@@ -182,7 +185,9 @@ header{
  display:  inline-block;
  bottom: 10px;
  position: absolute;
- color:rgb(245,245,245);
+}
+.btn-readmore:link{
+  color:rgb(245,245,245);
 }
 }
 .btn-readmore:visited{

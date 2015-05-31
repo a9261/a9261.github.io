@@ -1,7 +1,7 @@
-﻿---
+---
 layout: post
 title: "Jekyll Pagination分頁設定"
-description: "Jekyll 預設是沒有開啟分頁的噢，是不是覺得文章一多要一直拉一直拉很煩呢？，現在就一起來看看怎麼做Pagination分頁設定吧! :)"
+description: "Jekyll 預設是沒有開啟分頁的噢，是不是覺得文章一多要一直拉一直拉很煩呢？，現在就一起來看看怎麼做Pagination分頁設定吧!"
 category: Jekyll 
 tags: [教學]
 ---
@@ -13,7 +13,6 @@ tags: [教學]
 是不是感覺不太人性化呢？這篇就會簡單的教你如何快速的開啟分頁功能噢 :)
 
 希望對大家有一些些幫助
-
 <!-- more -->
 
 首先我們要注意到一點就是，如果你是用[jekyll-bootstrap](http://jekyllbootstrap.com)的話

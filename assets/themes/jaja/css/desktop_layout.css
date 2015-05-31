@@ -154,6 +154,9 @@ header{
 .article-title {
  display: inline;
 }
+.article-title a:link{
+  color: rgb(33,33,33);
+}
 /*內文摘要*/
 .article-short-content{
   margin-top: 20px;
@@ -184,10 +187,12 @@ header{
 }
 /*read more按鈕*/
 .btn-readmore{
-
   display:  inline-block;
   position: absolute;
   bottom: 20px;
+  
+}
+.btn-readmore::link{
   color:rgb(245,245,245);
 }
 }
