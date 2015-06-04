@@ -7,13 +7,16 @@
           $( this ).toggleClass("Anima-Shadow-z-1-out");
       })
       $('.nav-btn').mousedown(function() {
-          $(this).toggleClass("Anima-Shadow-z-2-in");
+          $(this).addClass("Anima-Shadow-z-2-in");
       });
       $('.nav-btn').mouseup(function() {
-          $( this ).toggleClass("Anima-Shadow-z-2-out");
+          $( this ).addClass("Anima-Shadow-z-2-out");
       })
+
        $('.nav-btn').click(function () {
-           //$('.nav-wrapper').removeClass('animated slideOutLeft');
+          
+          $('.nav-wrapper').removeClass('slideInLeft');
+
            $('.nav-wrapper').addClass('animated slideInLeft');
            $('.archive').addClass('animated slideInLeft');
            $('.categories').addClass('animated slideInLeft');
@@ -26,10 +29,10 @@
            $('.nav-btn').removeClass('Anima-Shadow-z-2-in');
            $('.nav-btn').removeClass('Anima-Shadow-z-2-out');
            
-           $('.nav-wrapper').addClass('slideOutLeft');
-           $('.nav-wrapper').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-               $('.nav-wrapper').removeClass('animated slideInLeft slideOutLeft');
+           $('.nav-wrapper').addClass('animated slideOutLeft');
 
+           $('.nav-wrapper').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+               $('.nav-wrapper').removeClass('animated slideOutLeft');
                $('.archive').removeClass('animated slideInLeft');
                $('.categories').removeClass('animated slideInLeft');
                $('.tags').removeClass('animated slideInLeft');
