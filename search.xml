@@ -4,25 +4,23 @@
   
     
     <entry>
-      <title>First Deploy</title>
-      <link href="/2022/08/10/First-Deploy/"/>
-      <url>/2022/08/10/First-Deploy/</url>
+      <title>how to set github page custom domain</title>
+      <link href="/2022/08/14/how-to-set-github-page-custom-domain/"/>
+      <url>/2022/08/14/how-to-set-github-page-custom-domain/</url>
       
-        <content type="html"><![CDATA[<h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h3 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h3><p>測試一下 Hexo</p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/2022-08-14-how-to-set-github-page-custom-domain/verifyed.png"></p>]]></content>
       
       
       <categories>
           
-          <category> HexoDeploy </category>
+          <category> infra </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Test </tag>
-            
-            <tag> Test2 </tag>
+            <tag> infra </tag>
             
         </tags>
       

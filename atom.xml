@@ -6,7 +6,7 @@
   <link href="https://a9261.github.io/atom.xml" rel="self"/>
   
   <link href="https://a9261.github.io/"/>
-  <updated>2022-08-09T16:42:16.333Z</updated>
+  <updated>2022-08-13T16:43:50.276Z</updated>
   <id>https://a9261.github.io/</id>
   
   <author>
@@ -17,28 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>First Deploy</title>
-    <link href="https://a9261.github.io/2022/08/10/First-Deploy/"/>
-    <id>https://a9261.github.io/2022/08/10/First-Deploy/</id>
-    <published>2022-08-09T16:38:45.000Z</published>
-    <updated>2022-08-09T16:42:16.333Z</updated>
+    <title>how to set github page custom domain</title>
+    <link href="https://a9261.github.io/2022/08/14/how-to-set-github-page-custom-domain/"/>
+    <id>https://a9261.github.io/2022/08/14/how-to-set-github-page-custom-domain/</id>
+    <published>2022-08-13T16:36:04.000Z</published>
+    <updated>2022-08-13T16:43:50.276Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h3 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h3><p>測試一下 Hexo</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2022-08-14-how-to-set-github-page-custom-domain/verifyed.png"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;h1&quot;&gt;&lt;a href=&quot;#h1&quot; class=&quot;headerlink&quot; title=&quot;h1&quot;&gt;&lt;/a&gt;h1&lt;/h1&gt;&lt;h3 id=&quot;h2&quot;&gt;&lt;a href=&quot;#h2&quot; class=&quot;headerlink&quot; title=&quot;h2&quot;&gt;&lt;/a&gt;h2&lt;/h3&gt;&lt;p&gt;測試一</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022-08-14-how-to-set-github-page-custom-domain/verifyed.png&quot;&gt;&lt;/p&gt;
+</summary>
       
     
     
     
-    <category term="HexoDeploy" scheme="https://a9261.github.io/categories/HexoDeploy/"/>
+    <category term="infra" scheme="https://a9261.github.io/categories/infra/"/>
     
     
-    <category term="Test" scheme="https://a9261.github.io/tags/Test/"/>
-    
-    <category term="Test2" scheme="https://a9261.github.io/tags/Test2/"/>
+    <category term="infra" scheme="https://a9261.github.io/tags/infra/"/>
     
   </entry>
   
