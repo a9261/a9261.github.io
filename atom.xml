@@ -6,7 +6,7 @@
   <link href="https://a9261.github.io/atom.xml" rel="self"/>
   
   <link href="https://a9261.github.io/"/>
-  <updated>2022-08-16T16:07:02.745Z</updated>
+  <updated>2022-08-16T16:09:09.754Z</updated>
   <id>https://a9261.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>how-to-safe-set-web-app-Firewall</title>
+    <title>如何安全的設定 Web App 對外 IP 存取限制</title>
     <link href="https://a9261.github.io/2022/08/16/how-to-safe-set-web-app-Firewall/"/>
     <id>https://a9261.github.io/2022/08/16/how-to-safe-set-web-app-Firewall/</id>
     <published>2022-08-16T15:27:17.000Z</published>
-    <updated>2022-08-16T16:07:02.745Z</updated>
+    <updated>2022-08-16T16:09:09.754Z</updated>
     
     <content type="html"><![CDATA[<p>今天來分享一個安全設定 Web App 防火牆的小技巧，在線上已經運行的環境如果你任意加入了新的 IP 規則<br>這時候 Web App 會自動先設定 Deny All 再將你的 IP 規則加入，如下圖(這裡我設定 Allow )<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/beforeSetting.png" alt="BeforeSetting"><br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/AfterSetting.png" alt="AfterSetting"></p><p>如果你是這種設定方式，會導致在你設定完所有 IP 規則之前，Web App 是不完全可用的狀態<br>會出現以下畫面<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/Forbidden.png" alt="Forbidden"></p><p>為了避免這個情況，其實有一個更安全的做法，就是先加入一個 Allow All 的 IP 規則<br>再依序將你要的 IP 規則設定上去，最後再將 Allow All 這個規則移除掉<br>如下圖 我先設定好 Allow All IPv4 CIDR 標記法是 0.0.0.0&#x2F;0<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/AllowAll.png" alt="AllowAll"></p><p>可以看到沒有出現 Forbidden 的畫面<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/Ok.png" alt="Ok"></p><p>這時再將你想要加入的規則一一加入即可，記得最後要把 Allow All 移除掉，否則前面設定的規則就沒有用處了</p>]]></content>
     
