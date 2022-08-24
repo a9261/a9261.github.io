@@ -20,6 +20,15 @@
     var CONFIG = {"hostname":"a9261.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9XNF006JZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X9XNF006JZ');
+</script>
   <meta name="description" content="雖然網路上很多教學，不過這裡簡單記錄一下我設定的過程 Github Page 支援二種域名做綁定 Subdomain、Apex domain 第一種其實就是 xxx.yourdomain.com 這種常見的類型 另一種其實就是所謂的 A Record 設定 (將你的域名綁定到特定IP上) 也就是 yourdomain.com 會設定一組或多組 IP 我這裡就直接使用 A Record 設定，在 G">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何自訂義 Github page domain">

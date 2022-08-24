@@ -20,6 +20,15 @@
     var CONFIG = {"hostname":"a9261.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X9XNF006JZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X9XNF006JZ');
+</script>
   <meta name="description" content="今天來分享一個安全設定 Web App 防火牆的小技巧，在線上已經運行的環境如果你任意加入了新的 IP 規則這時候 Web App 會自動先設定 Deny All 再將你的 IP 規則加入，如下圖(這裡我設定 Allow ) 如果你是這種設定方式，會導致在你設定完所有 IP 規則之前，Web App 是不完全可用的狀態會出現以下畫面 為了避免這個情況，其實有一個更安全的做法，就是先加入一個 All">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何安全的設定 Web App 對外 IP 存取限制">
