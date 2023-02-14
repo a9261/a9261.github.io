@@ -6,7 +6,7 @@
   <link href="https://a9261.github.io/atom.xml" rel="self"/>
   
   <link href="https://a9261.github.io/"/>
-  <updated>2022-08-16T16:29:32.644Z</updated>
+  <updated>2023-02-14T15:54:34.223Z</updated>
   <id>https://a9261.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>關於單元測試中的Stub</title>
+    <link href="https://a9261.github.io/2023/02/14/a-unit-test-of-stub/"/>
+    <id>https://a9261.github.io/2023/02/14/a-unit-test-of-stub/</id>
+    <published>2023-02-14T14:28:58.000Z</published>
+    <updated>2023-02-14T15:54:34.223Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天來分享一個實際利用 C# 的 moq 套件。將要測試的目標方法做 stub ，再來驗證我們實際執行的方法是否正確<br>首先我們先看一下原本的方法邏輯，最後會提為什麼我們會需要做 stub<br>我們目標很簡單，希望能找出資料庫中某一張資料表 N 天之前的流水號<br>所以這裡只要流水號不是 0 就代表有成功找到了<br><img src="/2023/02/14/a-unit-test-of-stub/TestFunction.png" alt="TestFunctionExample"></p><p>接下來看一下我們原本的搜尋方式，可以看到是直接寫 T-SQL 語法抓出相關的資料並在資料庫裡進行搜尋<br>(這裡因為不需要太過精準所以只要差距在10天內就當做有找到了)<br><img src="/2023/02/14/a-unit-test-of-stub/SearchCode.png" alt="SearchCode"></p><p>再來就是進行整合測試。如果有使用 Azure Database 經驗的人會知道。如果資料庫的等級不是很高<br>在持續執行這種語法時會導致 DTU 增高或是處理速度很慢的情況<br><img src="/2023/02/14/a-unit-test-of-stub/WorseCase.png" alt="WorseCase"></p><p>所以為了讓我們能夠更單純一點去測試「 N 天之前的流水號」這件事情，我們就需要針對其它操作到資料庫的方法來做所謂的 stub<br>也就是下圖中的紅框處，包含取得一開始的資料初始值與後續在資料表中進行查找的動作</p><p><img src="/2023/02/14/a-unit-test-of-stub/NeedChange.png" alt="NeedChangeOfCode"></p><p>因為使用 moq 的關係，我這裡就先將紅框處抽出為 protect 方法並加上 virtual 供後續我們能做 stub</p><p>修改完如下圖<br><img src="/2023/02/14/a-unit-test-of-stub/ChangeResult.png" alt="ChangeResult"></p><p>再來就是回到我們的測試案例中，將原本直接呼叫流程調整為，先建立好 stub 後再進行呼叫</p><p>完成結果如下圖<br><img src="/2023/02/14/a-unit-test-of-stub/MockResult.png" alt="MockResult"></p><p>我們將原本初始化的函數以及在資料庫中搜尋的語法，調整為透過 List MockSearchData  做搜尋</p><p>這樣做的好處除了我們可以自行決定要測試的資料筆數與日期區間。相較原本採用整合測試直接在資料庫中進行處理，在這裡利用 moq 進行改寫會顯得更有效率。</p><p>如果有問題都歡迎留言進行討論，謝謝大家</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天來分享一個實際利用 C# 的 moq 套件。將要測試的目標方法做 stub ，再來驗證我們實際執行的方法是否正確&lt;br&gt;首先我們先看一下原本的方法邏輯，最後會提為什麼我們會需要做 stub&lt;br&gt;我們目標很簡單，希望能找出資料庫中某一張資料表 N 天之前的流水號&lt;br&gt;</summary>
+      
+    
+    
+    
+    <category term="C#" scheme="https://a9261.github.io/categories/C/"/>
+    
+    
+    <category term="UnitTest" scheme="https://a9261.github.io/tags/UnitTest/"/>
+    
+  </entry>
   
   <entry>
     <title>如何安全的設定 Web App 對外 IP 存取限制</title>

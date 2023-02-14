@@ -1,7 +1,10 @@
+https://a9261.github.io/2023/02/14/a-unit-test-of-stub/
 https://a9261.github.io/2022/08/16/how-to-safe-set-web-app-Firewall/
 https://a9261.github.io/2022/08/14/how-to-set-github-page-custom-domain/
 https://a9261.github.io/
 https://a9261.github.io/tags/infra/
 https://a9261.github.io/tags/azure/
+https://a9261.github.io/tags/UnitTest/
 https://a9261.github.io/categories/infra/
 https://a9261.github.io/categories/azure/
+https://a9261.github.io/categories/C/
