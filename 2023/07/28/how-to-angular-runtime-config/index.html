@@ -29,31 +29,44 @@
 
   gtag('config', 'G-X9XNF006JZ');
 </script>
-  <meta name="description" content="雜七雜八">
-<meta property="og:type" content="website">
-<meta property="og:title" content="怕 Bug 的我，把他寫下來就對了">
-<meta property="og:url" content="https://a9261.github.io/index.html">
+  <meta name="description" content="一般來說在使用 Angular 或其它前端框架，設定檔(Config)在建置完成時就已經決定好了相關的內容如下圖，會有所謂的dev、stage、production各自對應的設定檔 但如果在某些情境下需要去動態修改設定檔的值 e.g. 呼叫的 API Endpoint 需要在不同的客戶端調整為不同的 Url 這時候如果在建置才決定客戶端的 Url 有可能就不是那麼方便了。 而 Runtime Co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何讓 Azure Static Web App 搭配 Angular 產生 Runtime Config 效果">
+<meta property="og:url" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/index.html">
 <meta property="og:site_name" content="怕 Bug 的我，把他寫下來就對了">
-<meta property="og:description" content="雜七雜八">
+<meta property="og:description" content="一般來說在使用 Angular 或其它前端框架，設定檔(Config)在建置完成時就已經決定好了相關的內容如下圖，會有所謂的dev、stage、production各自對應的設定檔 但如果在某些情境下需要去動態修改設定檔的值 e.g. 呼叫的 API Endpoint 需要在不同的客戶端調整為不同的 Url 這時候如果在建置才決定客戶端的 Url 有可能就不是那麼方便了。 而 Runtime Co">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/angular_envirnment_example.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/static_web_app.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/step1_install_extension.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/static_web_app.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/ste3_hostjson.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/step3_angular_config.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/ste3_static_deploy_token.png">
+<meta property="og:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/ste3_static_appsetting.png">
+<meta property="og:image" content="https://a9261.github.io/2023-07-28-how-to-angular-runtime-config/tips_getconfig.png">
+<meta property="article:published_time" content="2023-07-28T07:53:30.000Z">
+<meta property="article:modified_time" content="2023-07-28T10:23:49.743Z">
 <meta property="article:author" content="Jaja">
-<meta property="article:tag" content="C#, .NET Core">
+<meta property="article:tag" content="Azure">
+<meta property="article:tag" content="Angular">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/angular_envirnment_example.png">
 
-<link rel="canonical" href="https://a9261.github.io/">
+<link rel="canonical" href="https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>怕 Bug 的我，把他寫下來就對了</title>
+  <title>如何讓 Azure Static Web App 搭配 Angular 產生 Runtime Config 效果 | 怕 Bug 的我，把他寫下來就對了</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X9XNF006JZ"></script>
     <script>
@@ -161,9 +174,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
@@ -179,10 +193,9 @@
       <meta itemprop="name" content="怕 Bug 的我，把他寫下來就對了">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/28/how-to-angular-runtime-config/" class="post-title-link" itemprop="url">如何讓 Azure Static Web App 搭配 Angular 產生 Runtime Config 效果</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          如何讓 Azure Static Web App 搭配 Angular 產生 Runtime Config 效果
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -229,7 +242,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一般來說在使用 Angular 或其它前端框架，設定檔(Config)在建置完成時就已經決定好了相關的內容<br>如下圖，會有所謂的dev、stage、production各自對應的設定檔<br><img src="/2023/07/28/how-to-angular-runtime-config/angular_envirnment_example.png" alt="ng-build-environment"></p>
+        <p>一般來說在使用 Angular 或其它前端框架，設定檔(Config)在建置完成時就已經決定好了相關的內容<br>如下圖，會有所謂的dev、stage、production各自對應的設定檔<br><img src="/2023/07/28/how-to-angular-runtime-config/angular_envirnment_example.png" alt="ng-build-environment"></p>
 <p>但如果在某些情境下需要去動態修改設定檔的值 e.g. 呼叫的 API Endpoint 需要在不同的客戶端調整為不同的 Url</p>
 <p>這時候如果在建置才決定客戶端的 Url 有可能就不是那麼方便了。</p>
 <p>而 Runtime Config 效果，說穿就是透過呼叫一個固定的 API 來取得對應的參數檔(原本是利用 config.json 做為我們的參數來源)</p>
@@ -266,315 +279,61 @@
 <p><a target="_blank" rel="noopener" href="https://azure.github.io/static-web-apps-cli/docs/cli/swa">swa-cli</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.miniasp.com/post/2022/10/22/Deploy-Website-using-Azure-Static-Web-Apps-CLI">如何使用 Azure Static Web Apps CLI 手動部署靜態網站應用程式</a></p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Azure/" rel="tag"># Azure</a>
+              <a href="/tags/Angular/" rel="tag"># Angular</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://a9261.github.io/2023/02/14/a-unit-test-of-stub/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jaja">
-      <meta itemprop="description" content="雜七雜八">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="怕 Bug 的我，把他寫下來就對了">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/02/14/a-unit-test-of-stub/" class="post-title-link" itemprop="url">關於單元測試中的Stub</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2023-02-14 22:28:58 / 修改時間：23:54:34" itemprop="dateCreated datePublished" datetime="2023-02-14T22:28:58+08:00">2023-02-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>641</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天來分享一個實際利用 C# 的 moq 套件。將要測試的目標方法做 stub ，再來驗證我們實際執行的方法是否正確<br>首先我們先看一下原本的方法邏輯，最後會提為什麼我們會需要做 stub<br>我們目標很簡單，希望能找出資料庫中某一張資料表 N 天之前的流水號<br>所以這裡只要流水號不是 0 就代表有成功找到了<br><img src="/2023/02/14/a-unit-test-of-stub/TestFunction.png" alt="TestFunctionExample"></p>
-<p>接下來看一下我們原本的搜尋方式，可以看到是直接寫 T-SQL 語法抓出相關的資料並在資料庫裡進行搜尋<br>(這裡因為不需要太過精準所以只要差距在10天內就當做有找到了)<br><img src="/2023/02/14/a-unit-test-of-stub/SearchCode.png" alt="SearchCode"></p>
-<p>再來就是進行整合測試。如果有使用 Azure Database 經驗的人會知道。如果資料庫的等級不是很高<br>在持續執行這種語法時會導致 DTU 增高或是處理速度很慢的情況<br><img src="/2023/02/14/a-unit-test-of-stub/WorseCase.png" alt="WorseCase"></p>
-<p>所以為了讓我們能夠更單純一點去測試「 N 天之前的流水號」這件事情，我們就需要針對其它操作到資料庫的方法來做所謂的 stub<br>也就是下圖中的紅框處，包含取得一開始的資料初始值與後續在資料表中進行查找的動作</p>
-<p><img src="/2023/02/14/a-unit-test-of-stub/NeedChange.png" alt="NeedChangeOfCode"></p>
-<p>因為使用 moq 的關係，我這裡就先將紅框處抽出為 protect 方法並加上 virtual 供後續我們能做 stub</p>
-<p>修改完如下圖<br><img src="/2023/02/14/a-unit-test-of-stub/ChangeResult.png" alt="ChangeResult"></p>
-<p>再來就是回到我們的測試案例中，將原本直接呼叫流程調整為，先建立好 stub 後再進行呼叫</p>
-<p>完成結果如下圖<br><img src="/2023/02/14/a-unit-test-of-stub/MockResult.png" alt="MockResult"></p>
-<p>我們將原本初始化的函數以及在資料庫中搜尋的語法，調整為透過 List MockSearchData  做搜尋</p>
-<p>這樣做的好處除了我們可以自行決定要測試的資料筆數與日期區間。相較原本採用整合測試直接在資料庫中進行處理，在這裡利用 moq 進行改寫會顯得更有效率。</p>
-<p>如果有問題都歡迎留言進行討論，謝謝大家</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/14/a-unit-test-of-stub/" rel="prev" title="關於單元測試中的Stub">
+      <i class="fa fa-chevron-left"></i> 關於單元測試中的Stub
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://a9261.github.io/2022/08/16/how-to-safe-set-web-app-Firewall/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jaja">
-      <meta itemprop="description" content="雜七雜八">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="怕 Bug 的我，把他寫下來就對了">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/16/how-to-safe-set-web-app-Firewall/" class="post-title-link" itemprop="url">如何安全的設定 Web App 對外 IP 存取限制</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2022-08-16 23:27:17" itemprop="dateCreated datePublished" datetime="2022-08-16T23:27:17+08:00">2022-08-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-08-17 00:29:32" itemprop="dateModified" datetime="2022-08-17T00:29:32+08:00">2022-08-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/azure/" itemprop="url" rel="index"><span itemprop="name">azure</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>373</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天來分享一個安全設定 Web App 防火牆的小技巧，在線上已經運行的環境如果你任意加入了新的 IP 規則<br>這時候 Web App 會自動先設定 Deny All 再將你的 IP 規則加入，如下圖(這裡我設定 Allow )<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/beforeSetting.png" alt="BeforeSetting"><br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/AfterSetting.png" alt="AfterSetting"></p>
-<p>如果你是這種設定方式，會導致在你設定完所有 IP 規則之前，Web App 是不完全可用的狀態<br>會出現以下畫面<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/Forbidden.png" alt="Forbidden"></p>
-<p>為了避免這個情況，其實有一個更安全的做法，就是先加入一個 Allow All 的 IP 規則<br>再依序將你要的 IP 規則設定上去，最後再將 Allow All 這個規則移除掉<br>如下圖 我先設定好 Allow All IPv4 CIDR 標記法是 0.0.0.0&#x2F;0<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/AllowAll.png" alt="AllowAll"></p>
-<p>可以看到沒有出現 Forbidden 的畫面<br><img src="/2022/08/16/how-to-safe-set-web-app-Firewall/Ok.png" alt="Ok"></p>
-<p>這時再將你想要加入的規則一一加入即可，記得最後要把 Allow All 移除掉，否則前面設定的規則就沒有用處了</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-tw/azure/app-service/app-service-ip-restrictions#set-an-ip-address-based-rule">app-service-ip-restrictions</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://a9261.github.io/2022/08/14/how-to-set-github-page-custom-domain/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jaja">
-      <meta itemprop="description" content="雜七雜八">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="怕 Bug 的我，把他寫下來就對了">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/14/how-to-set-github-page-custom-domain/" class="post-title-link" itemprop="url">如何自訂義 Github page domain</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2022-08-14 00:36:04 / 修改時間：01:36:31" itemprop="dateCreated datePublished" datetime="2022-08-14T00:36:04+08:00">2022-08-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/infra/" itemprop="url" rel="index"><span itemprop="name">infra</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>871</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>雖然網路上很多教學，不過這裡簡單記錄一下我設定的過程</p>
-<p>Github Page 支援二種域名做綁定 Subdomain、Apex domain</p>
-<p>第一種其實就是 xxx.yourdomain.com 這種常見的類型</p>
-<p>另一種其實就是所謂的 A Record 設定 (將你的域名綁定到特定IP上)</p>
-<p>也就是 yourdomain.com 會設定一組或多組 IP</p>
-<p>我這裡就直接使用 A Record 設定，在 Github 官方的<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">文件</a>中有列出所有需要綁定到的 IP</p>
-<p>以下這四組 IP 就是需要設定的</p>
-<pre><code>185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-</code></pre>
-<p>下圖為我在 Godaddy DNS 管理設定的畫面<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/dns-setting-A-record.png" alt="dns-a-record"></p>
-<p>設定好之後照官方的<a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">建議</a>，會需要做一下 Domain Verify (這個動作是避免其它人將這個域名綁定到他自已的 Github 上)</p>
-<p>首先到 Github 右上的功能選單點選 Settings<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/user-settings.png" alt="user-setting"><br>接下來在左側找到 Pages (因為我們這裡要設定的是我們的GithubPage)<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/user-page.png" alt="user-page"><br>再來點擊右上的 Add a domain 按鈕，並輸入你接下來想綁定的域名<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/click-add-domain.png" alt="clic-add-domiain"></p>
-<p>再來照他上面的說明把這個驗證用的資訊到你的 DNS 上做 TXT Record 設定<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/add-verifiy-info.png" alt="add-txt-record"><br>如果驗證成功就會顯示一個綠色 Verified 字樣<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/verifyed.png" alt="verifyed"></p>
-<p>再來回到你的 xxx.github.io Repository 底下<br>我們要透過 Setting -&gt; Pages 來做域名的綁定<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/page-setting-domain.png" alt="page-setting-domain"></p>
-<p>這裡就簡單多了，拉到最下方的 Custom domain 區塊<br>將你要綁定的域名打上去後按 Save (這裡需要看你域名設定完 A Record 需要多久的時間更新，每個域名商需要的時間不一樣)<br>再來就可以看他 DNS 的記錄是否綁定成功，最後別忘了勾選底下的 Enforce HTTPS 這裡 Github 會自動幫你的域名申請好 HTTPS 憑證並設定上去，是不是很方便呢?<br><img src="/2022/08/14/how-to-set-github-page-custom-domain/set-my-domain.png" alt="set-my-domain"></p>
-<p>以上就是這次域名綁定的教學，謝謝大家</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">managing-a-custom-domain-for-your-github-pages-site</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages">verifying-your-custom-domain-for-github-pages</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    
+  
+  <div class="comments">
+    <script src="https://giscus.app/client.js"
+        data-repo="a9261/a9261.github.io" 
+        data-repo-id="R_kgDOHywZ7w" 
+        data-category="Announcements"
+        data-category-id="DIC_kwDOHywZ784CQ4ST"
+        data-mapping="pathname" 
+        data-reactions-enabled="1" 
+        data-emit-metadata="1" 
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        data-input-position="bottom"
+        data-loading="lazy"
+        async>
+    </script>
+  </div>
+  
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -621,6 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

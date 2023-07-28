@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://a9261.github.io/2023/07/28/how-to-angular-runtime-config/</loc>
+    
+    <lastmod>2023-07-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://a9261.github.io/2023/02/14/a-unit-test-of-stub/</loc>
     
     <lastmod>2023-02-14</lastmod>
@@ -31,7 +40,7 @@
 
   <url>
     <loc>https://a9261.github.io/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,21 +48,35 @@
   
   <url>
     <loc>https://a9261.github.io/tags/infra/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a9261.github.io/tags/azure/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a9261.github.io/tags/UnitTest/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://a9261.github.io/tags/Azure/</loc>
+    <lastmod>2023-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://a9261.github.io/tags/Angular/</loc>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -62,21 +85,28 @@
   
   <url>
     <loc>https://a9261.github.io/categories/infra/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a9261.github.io/categories/azure/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://a9261.github.io/categories/C/</loc>
-    <lastmod>2023-02-14</lastmod>
+    <lastmod>2023-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://a9261.github.io/categories/FrontEnd/</loc>
+    <lastmod>2023-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
